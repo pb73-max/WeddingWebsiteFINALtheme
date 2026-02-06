@@ -152,7 +152,17 @@ git reset --hard ee9b99b
 ## Phase 9: Animations & Polish - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`fbbc186` - [9-1 to 9-7] Add scroll reveal animations and polish
+
+### Rollback Instructions
+```bash
+git reset --hard fbbc186
+```
+
+### Files State at This Point
+- css/style.css: Reveal animations, focus states, hover effects
+- js/main.js: Intersection Observer, countdown transitions
+- All HTML files: reveal classes added to content panels
 
 ---
 
@@ -196,7 +206,7 @@ git reset --hard ee9b99b
 | 6 | 4a24a6f | Events timeline |
 | 7 | 075df86 | Travel guide |
 | 8 | ee9b99b | SVG assets |
-| 9 | pending | Animations |
+| 9 | fbbc186 | Animations |
 | 10 | pending | Responsive |
 | 11 | pending | Accessibility |
 | 12 | pending | RSVP backend |
