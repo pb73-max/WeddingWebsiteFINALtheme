@@ -563,44 +563,181 @@ ul {
   border: 1px solid rgba(201, 168, 76, 0.25);
 }
 
-/* Ganesha Icon Placeholder */
+/* Hero Panel specific */
+.hero-panel {
+  padding: var(--spacing-xxl) var(--spacing-xl);
+}
+
+/* Ganesha Icon */
 .ganesha-icon {
   margin-bottom: var(--spacing-lg);
 }
 
-.ganesha-placeholder {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  background: var(--metallic-gold);
-  border-radius: 50%;
-  opacity: 0.3;
+.ganesha-svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* Couple Frame */
+/* Couple Frame with Florals */
 .couple-frame {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 380px;
 }
 
+/* Floral Decorations */
+.floral-decoration {
+  position: absolute;
+  width: 100px;
+  height: 220px;
+  top: 20px;
+  pointer-events: none;
+}
+
+.floral-left {
+  left: 0;
+  transform: translateX(-20%);
+}
+
+.floral-right {
+  right: 0;
+  transform: translateX(20%) scaleX(-1);
+}
+
+.floral-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* Mughal Arch */
 .mughal-arch {
-  max-width: 300px;
-  height: 350px;
-  margin: 0 auto;
-  background: linear-gradient(180deg, var(--light-gold) 0%, var(--rich-gold) 60%, var(--deep-gold) 100%);
-  border: 2px solid var(--metallic-gold);
-  border-radius: 50% 50% 0 0;
+  width: 280px;
+  height: 340px;
+  background: linear-gradient(
+    180deg,
+    var(--light-gold) 0%,
+    var(--rich-gold) 40%,
+    var(--deep-gold) 100%
+  );
+  border: 3px solid var(--metallic-gold);
+  position: relative;
+  /* Scalloped arch shape */
+  clip-path: polygon(
+    0% 100%,
+    0% 35%,
+    2% 28%,
+    6% 22%,
+    12% 16%,
+    20% 10%,
+    30% 5%,
+    42% 2%,
+    50% 0%,
+    58% 2%,
+    70% 5%,
+    80% 10%,
+    88% 16%,
+    94% 22%,
+    98% 28%,
+    100% 35%,
+    100% 100%
+  );
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.2),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.arch-inner {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 231, 0.15) 0%,
+    rgba(255, 248, 231, 0.05) 100%
+  );
+  clip-path: polygon(
+    0% 100%,
+    0% 35%,
+    2% 28%,
+    6% 22%,
+    12% 16%,
+    20% 10%,
+    30% 5%,
+    42% 2%,
+    50% 0%,
+    58% 2%,
+    70% 5%,
+    80% 10%,
+    88% 16%,
+    94% 22%,
+    98% 28%,
+    100% 35%,
+    100% 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Scalloped clip-path will be added later */
 }
 
 .couple-illustration {
-  width: 200px;
-  height: 280px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50% 50% 0 0;
-  /* Placeholder for actual illustration */
+  width: 180px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration-placeholder {
+  text-align: center;
+  color: var(--dark-green);
+  opacity: 0.6;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.placeholder-text {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+/* Gold Ribbon Banner */
+.gold-ribbon {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--deep-gold) 10%,
+    var(--rich-gold) 30%,
+    var(--light-gold) 50%,
+    var(--rich-gold) 70%,
+    var(--deep-gold) 90%,
+    transparent 100%
+  );
+  padding: var(--spacing-xs) var(--spacing-xl);
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-date {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dark-green);
 }
 
 /* Hero Text */
@@ -608,59 +745,231 @@ ul {
   margin-bottom: var(--spacing-xl);
 }
 
+.ampersand {
+  font-family: var(--font-script);
+  color: var(--coral-red);
+  font-size: 0.8em;
+  margin: 0 0.1em;
+}
+
+.venue-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.date-primary {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.venue-divider {
+  color: var(--metallic-gold);
+  font-size: 0.6rem;
+  opacity: 0.6;
+}
+
+.venue-name {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  opacity: 0.9;
+}
+
 /* Countdown Timer */
 .countdown {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-md);
+  align-items: center;
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-xl);
   flex-wrap: wrap;
 }
 
 .countdown-unit {
-  background: rgba(201, 168, 76, 0.2);
-  border: 1px solid var(--metallic-gold);
-  padding: var(--spacing-md) var(--spacing-lg);
-  min-width: 80px;
   text-align: center;
+}
+
+.countdown-frame {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 168, 76, 0.25) 0%,
+    rgba(201, 168, 76, 0.1) 100%
+  );
+  border: 2px solid var(--metallic-gold);
+  border-radius: 4px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  min-width: 70px;
+  position: relative;
+  box-shadow:
+    inset 0 2px 10px rgba(201, 168, 76, 0.1),
+    0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative corners on countdown frames */
+.countdown-frame::before,
+.countdown-frame::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--metallic-gold);
+}
+
+.countdown-frame::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.countdown-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
 }
 
 .countdown-number {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   color: var(--light-gold);
   line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .countdown-label {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: var(--cream);
-  margin-top: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  opacity: 0.9;
+}
+
+.countdown-separator {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--metallic-gold);
+  opacity: 0.5;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Wedding Day Message */
+.wedding-day-message {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.celebration-text {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--coral-red);
+  margin-bottom: var(--spacing-xs);
+}
+
+.celebration-subtext {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--cream);
+  opacity: 0.9;
 }
 
 /* CTA Button */
 .cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  background: var(--rich-gold);
+  background: linear-gradient(
+    135deg,
+    var(--rich-gold) 0%,
+    var(--light-gold) 50%,
+    var(--rich-gold) 100%
+  );
+  background-size: 200% 200%;
   color: var(--dark-green);
   padding: var(--spacing-md) var(--spacing-xl);
   border: 2px solid var(--metallic-gold);
+  box-shadow:
+    0 4px 15px rgba(201, 168, 76, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transition: all var(--transition-speed) var(--transition-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transition: left 0.5s var(--transition-ease);
 }
 
 .cta-button:hover {
-  background: var(--light-gold);
-  box-shadow: 0 0 20px rgba(212, 168, 67, 0.4);
+  background-position: 100% 100%;
+  box-shadow:
+    0 6px 25px rgba(201, 168, 76, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-text {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-arrow {
+  font-size: 1.2rem;
+  transition: transform var(--transition-speed) var(--transition-ease);
+}
+
+.cta-button:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Hero Regards */
+.hero-regards {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+}
+
+.regards-text {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 1.3rem;
+  color: var(--coral-red);
+  margin-bottom: var(--spacing-xs);
+}
+
+.family-names {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.9;
 }
 
 /* Corner Lotus/Fan Motifs */
@@ -901,8 +1210,100 @@ section:not(:last-of-type)::after {
   .corner-bottom-left { bottom: 12px; left: 12px; }
   .corner-bottom-right { bottom: 12px; right: 12px; }
 
-  .hero .content-panel {
+  /* Hero mobile adjustments */
+  .hero-panel {
     padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .couple-frame {
+    min-height: 320px;
+  }
+
+  .floral-decoration {
+    width: 60px;
+    height: 150px;
+    top: 30px;
+  }
+
+  .floral-left {
+    transform: translateX(-30%);
+  }
+
+  .floral-right {
+    transform: translateX(30%) scaleX(-1);
+  }
+
+  .mughal-arch {
+    width: 220px;
+    height: 280px;
+  }
+
+  .arch-inner {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .couple-illustration {
+    width: 140px;
+    height: 200px;
+  }
+
+  .placeholder-icon {
+    font-size: 2rem;
+  }
+
+  .gold-ribbon {
+    min-width: 140px;
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .ribbon-date {
+    font-size: 0.75rem;
+  }
+
+  .countdown {
+    gap: var(--spacing-xs);
+  }
+
+  .countdown-frame {
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 55px;
+  }
+
+  .countdown-separator {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.9rem;
+  }
+
+  .hero-regards {
+    margin-top: var(--spacing-lg);
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .countdown-separator {
+    display: none;
+  }
+
+  .countdown {
+    gap: var(--spacing-sm);
+  }
+
+  .floral-decoration {
+    display: none;
+  }
+
+  .mughal-arch {
+    width: 200px;
+    height: 260px;
   }
 }
 
