@@ -98,7 +98,7 @@
         </div>
 
         <!-- Countdown Timer -->
-        <div class="countdown" aria-label="Countdown to wedding day">
+        <div class="countdown" role="timer" aria-label="Countdown to wedding day" aria-live="off">
           <div class="countdown-unit">
             <div class="countdown-frame">
               <span class="countdown-number" id="countdown-days">--</span>
@@ -248,8 +248,10 @@
               required
               autocomplete="name"
               placeholder="Enter your full name"
+              aria-describedby="name-error"
+              aria-required="true"
             >
-            <span class="form-error" id="name-error" aria-live="polite"></span>
+            <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
           </div>
 
           <!-- Phone / WhatsApp -->
@@ -265,8 +267,10 @@
               required
               autocomplete="tel"
               placeholder="+91 98765 43210"
+              aria-describedby="phone-error"
+              aria-required="true"
             >
-            <span class="form-error" id="phone-error" aria-live="polite"></span>
+            <span class="form-error" id="phone-error" role="alert" aria-live="polite"></span>
           </div>
 
           <!-- Email -->
@@ -281,8 +285,9 @@
               class="form-input"
               autocomplete="email"
               placeholder="your@email.com"
+              aria-describedby="email-error"
             >
-            <span class="form-error" id="email-error" aria-live="polite"></span>
+            <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
           </div>
 
           <!-- Guest Names -->
@@ -290,7 +295,7 @@
             <label for="rsvp-guests" class="form-label">
               Names of All Attending Guests <span class="required" aria-hidden="true">*</span>
             </label>
-            <p class="form-hint">Include yourself and anyone accompanying you (one name per line)</p>
+            <p class="form-hint" id="guests-hint">Include yourself and anyone accompanying you (one name per line)</p>
             <textarea
               id="rsvp-guests"
               name="guestNames"
@@ -298,8 +303,10 @@
               required
               rows="4"
               placeholder="Prerna Agarwal&#10;Arpit Bhatia&#10;..."
+              aria-describedby="guests-hint guests-error"
+              aria-required="true"
             ></textarea>
-            <span class="form-error" id="guests-error" aria-live="polite"></span>
+            <span class="form-error" id="guests-error" role="alert" aria-live="polite"></span>
           </div>
 
           <!-- Dietary Requirements -->
@@ -343,7 +350,7 @@
         </form>
 
         <!-- Success State -->
-        <div class="rsvp-success" id="rsvp-success" hidden>
+        <div class="rsvp-success" id="rsvp-success" role="status" aria-live="polite" hidden>
           <div class="success-icon" aria-hidden="true">✓</div>
           <h3 class="success-title">Thank You!</h3>
           <p class="success-message">Your RSVP has been received. We can't wait to celebrate with you!</p>
@@ -351,7 +358,7 @@
         </div>
 
         <!-- Error State -->
-        <div class="rsvp-error" id="rsvp-error" hidden>
+        <div class="rsvp-error" id="rsvp-error" role="alert" aria-live="assertive" hidden>
           <div class="error-icon" aria-hidden="true">!</div>
           <h3 class="error-title">Something Went Wrong</h3>
           <p class="error-message">Please try again or contact us directly.</p>
@@ -363,7 +370,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-content">
       <p class="footer-text">With love,</p>
       <p class="footer-families">The Agarwal & Bhatia Families</p>
