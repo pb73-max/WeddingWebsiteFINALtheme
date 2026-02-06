@@ -54,7 +54,16 @@ git reset --hard 98e5ce1
 ## Phase 3: Hero Section - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`b55fc90` - [3-1 to 3-10] Complete hero section with all elements
+
+### Rollback Instructions
+```bash
+git reset --hard b55fc90
+```
+
+### Files State at This Point
+- index.html: Complete hero with Ganesha icon, Mughal arch, florals, countdown, CTA, family regards
+- css/style.css: All hero styling including scalloped arch clip-path, countdown frames, animations
 
 ---
 
@@ -134,7 +143,7 @@ git reset --hard 98e5ce1
 |-------|-------------|-------------|
 | 1 | 5b7a497 | Project setup |
 | 2 | 98e5ce1 | Layout & nav |
-| 3 | pending | Hero section |
+| 3 | b55fc90 | Hero section |
 | 4 | pending | RSVP form |
 | 5 | pending | Dress code |
 | 6 | pending | Events timeline |
