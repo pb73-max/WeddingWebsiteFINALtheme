@@ -103,7 +103,16 @@ git reset --hard c5b0688
 ## Phase 6: Events Timeline - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`4a24a6f` - [6-1 to 6-12] Add complete events timeline with all 6 ceremonies
+
+### Rollback Instructions
+```bash
+git reset --hard 4a24a6f
+```
+
+### Files State at This Point
+- events.html: Complete timeline with 6 events, themed cards, Royal Wedding group
+- css/style.css: Timeline styling, event cards, day headers, responsive layout
 
 ---
 
@@ -165,7 +174,7 @@ git reset --hard c5b0688
 | 3 | b55fc90 | Hero section |
 | 4 | 1175e76 | RSVP form |
 | 5 | c5b0688 | Dress code |
-| 6 | pending | Events timeline |
+| 6 | 4a24a6f | Events timeline |
 | 7 | pending | Travel guide |
 | 8 | pending | SVG assets |
 | 9 | pending | Animations |

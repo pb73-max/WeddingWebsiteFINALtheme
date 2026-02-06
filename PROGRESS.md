@@ -1,8 +1,8 @@
 # Prerna & Arpit Wedding Website - Progress Tracker
 
 ## Current Status
-**Active Phase**: Phase 6: Events Timeline
-**Overall Progress**: 5/13 phases complete
+**Active Phase**: Phase 7: Travel Guide
+**Overall Progress**: 6/13 phases complete
 **Blockers**: None
 
 ---
@@ -66,10 +66,14 @@
 - **Notes**: 4 themed cards with color swatches, responsive grid layout, hover effects
 
 ### Phase 6: Events Timeline (events.html)
-- **Status**: Not Started
-- **Completed**: -
-- **Files Created**: -
-- **Commits Made**: -
+- **Status**: Complete
+- **Completed**: Feb 6, 2026
+- **Files Modified**: events.html (+7.0 KB), css/style.css (+8.0 KB)
+- **Commits Made**:
+  - `4a24a6f` [6-1 to 6-12] Add complete events timeline with all 6 ceremonies
+- **Assumptions Made**: None
+- **Deviations from Plan**: None
+- **Notes**: All 6 events with themed styling, Royal Wedding group with shared banner, responsive timeline
 
 ### Phase 7: Travel Guide (travel.html)
 - **Status**: Not Started
@@ -136,9 +140,9 @@
 | File | Size | Running Total |
 |------|------|---------------|
 | index.html | 18.6 KB | 18.6 KB |
-| events.html | 3.3 KB | 21.9 KB |
-| travel.html | 4.1 KB | 26.0 KB |
-| css/style.css | 38.4 KB | 64.4 KB |
-| js/main.js | 11.4 KB | 75.8 KB |
-| assets/images/ | ~0 KB | 75.8 KB |
-| **Total** | **75.8 KB** | /1MB (7.6%)
+| events.html | 10.3 KB | 28.9 KB |
+| travel.html | 4.1 KB | 33.0 KB |
+| css/style.css | 46.4 KB | 79.4 KB |
+| js/main.js | 11.4 KB | 90.8 KB |
+| assets/images/ | ~0 KB | 90.8 KB |
+| **Total** | **90.8 KB** | /1MB (9.1%)
