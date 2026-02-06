@@ -103,6 +103,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Support for notched phones */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 body {
@@ -119,6 +121,8 @@ body {
   background-size: 200px 200px;
   background-position: 0 0;
   background-repeat: repeat;
+  /* Mobile tap highlight */
+  -webkit-tap-highlight-color: rgba(212, 168, 67, 0.2);
 }
 
 img {
@@ -485,8 +489,17 @@ ul {
 
   .nav-link {
     display: block;
-    padding: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
     border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+
+  .nav-link:active {
+    background-color: rgba(212, 168, 67, 0.15);
   }
 
   .nav-link::after {
@@ -2242,6 +2255,8 @@ section:not(:last-of-type)::after {
   background: linear-gradient(180deg, var(--dark-green) 0%, #0f261a 100%);
   border-top: 3px solid var(--metallic-gold);
   padding: var(--spacing-xxl) var(--spacing-md);
+  /* Safe area for phones with home indicator */
+  padding-bottom: calc(var(--spacing-xxl) + env(safe-area-inset-bottom));
   text-align: center;
   position: relative;
 }
@@ -2663,6 +2678,161 @@ section:not(:last-of-type)::after {
   /* Travel Page extra small */
   .tips-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Hero text adjustments */
+  .couple-names {
+    font-size: 2rem;
+  }
+
+  .script-tagline {
+    font-size: 1rem;
+  }
+
+  /* Countdown smaller */
+  .countdown-frame {
+    min-width: 48px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .countdown-number {
+    font-size: 1.3rem;
+  }
+
+  .countdown-label {
+    font-size: 0.6rem;
+  }
+}
+
+/* Extra extra small screens (320px) */
+@media (max-width: 320px) {
+  :root {
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1.5rem;
+  }
+
+  .content-panel {
+    margin: 0 var(--spacing-xs);
+    padding: var(--spacing-md);
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .couple-names {
+    font-size: 1.75rem;
+  }
+
+  .mughal-arch {
+    width: 180px;
+    height: 240px;
+  }
+
+  /* Stack countdown 2x2 */
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    max-width: 180px;
+  }
+
+  .countdown-separator {
+    display: none;
+  }
+
+  /* Smaller form elements */
+  .form-label {
+    font-size: 0.85rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: var(--spacing-sm);
+    font-size: 16px;
+  }
+
+  /* Route cards stack content */
+  .route-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  /* Tip cards tighter */
+  .tip-card {
+    padding: var(--spacing-sm);
+  }
+
+  .tip-title {
+    font-size: 0.95rem;
+  }
+
+  .tip-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* ================================
+   Touch Target Minimums (44px)
+   ================================ */
+@media (pointer: coarse) {
+  /* Navigation */
+  .nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Buttons */
+  .cta-button,
+  .submit-button {
+    min-height: 48px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  /* Form inputs */
+  .form-input,
+  .form-textarea {
+    min-height: 48px;
+    padding: var(--spacing-md);
+  }
+
+  /* Cards - ensure tappable area */
+  .mood-card,
+  .event-card,
+  .route-card,
+  .tip-card {
+    cursor: pointer;
+  }
+
+  /* Color swatches larger for touch */
+  .swatch,
+  .event-swatch {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Transport options - larger tap area */
+  .transport-option {
+    padding: var(--spacing-sm);
+    margin: calc(-1 * var(--spacing-sm));
+    border-radius: 8px;
+  }
+
+  .transport-option:active {
+    background: rgba(212, 168, 67, 0.1);
   }
 }
 
