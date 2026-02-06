@@ -200,7 +200,17 @@ git reset --hard ffd6830
 ## Phase 12: RSVP Backend Integration - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`dbdac56` - [12-1 to 12-6] Add RSVP backend integration
+
+### Rollback Instructions
+```bash
+git reset --hard dbdac56
+```
+
+### Files State at This Point
+- google-apps-script.js: Complete Apps Script for Google Sheets
+- RSVP-SETUP.md: Setup guide with step-by-step instructions
+- js/main.js: Updated with endpoint placeholder and demo mode
 
 ---
 
@@ -226,5 +236,5 @@ git reset --hard ffd6830
 | 9 | fbbc186 | Animations |
 | 10 | beb91de | Responsive |
 | 11 | ffd6830 | Accessibility |
-| 12 | pending | RSVP backend |
+| 12 | dbdac56 | RSVP backend |
 | 13 | pending | Deployment |
