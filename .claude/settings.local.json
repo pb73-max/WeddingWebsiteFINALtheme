@@ -9,7 +9,8 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\n[1-0] Add project documentation and planning files\n\n- PLAN.md: Complete 13-phase development plan\n- PROGRESS.md: Phase completion tracker\n- RESTORE_POINTS.md: Git rollback instructions\n- wedding-website-prd.md: Product requirements document\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git commit:*)",
       "Bash(wc:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git push:*)"
     ]
   }
 }
