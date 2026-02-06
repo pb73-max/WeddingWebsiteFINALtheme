@@ -2782,6 +2782,298 @@ section:not(:last-of-type)::after {
 }
 
 /* ================================
+   Scroll Reveal Animations
+   ================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reveal base state - hidden */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--transition-ease),
+              transform 0.6s var(--transition-ease);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal variations */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s var(--transition-ease),
+              transform 0.6s var(--transition-ease);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s var(--transition-ease),
+              transform 0.6s var(--transition-ease);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s var(--transition-ease),
+              transform 0.6s var(--transition-ease);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered reveal items */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s var(--transition-ease),
+              transform 0.5s var(--transition-ease);
+}
+
+.reveal-stagger.revealed .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================
+   Countdown Number Animation
+   ================================ */
+.countdown-number {
+  transition: transform 0.3s var(--transition-ease),
+              opacity 0.15s ease-out;
+}
+
+.countdown-number.updating {
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+/* ================================
+   Enhanced Focus States
+   ================================ */
+/* Global focus visible outline */
+:focus-visible {
+  outline: 3px solid var(--light-gold);
+  outline-offset: 3px;
+}
+
+/* Remove default focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Nav link focus */
+.nav-link:focus-visible {
+  outline: 2px solid var(--light-gold);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Button focus states */
+.cta-button:focus-visible,
+.submit-button:focus-visible {
+  outline: 3px solid var(--light-gold);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(242, 217, 139, 0.3);
+}
+
+/* Form input focus enhancement */
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: none;
+  border-color: var(--light-gold);
+  box-shadow: 0 0 0 3px rgba(242, 217, 139, 0.3),
+              inset 0 0 0 1px var(--light-gold);
+}
+
+/* Card focus for keyboard navigation */
+.event-card:focus-visible,
+.mood-card:focus-visible,
+.route-card:focus-visible,
+.tip-card:focus-visible {
+  outline: 3px solid var(--light-gold);
+  outline-offset: 4px;
+}
+
+/* Skip link focus */
+.skip-link:focus {
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  width: auto;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--rich-gold);
+  color: var(--dark-green);
+  z-index: 10000;
+  border-radius: 4px;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ================================
+   Enhanced Hover States
+   ================================ */
+/* Nav link hover underline effect */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--light-gold);
+  transition: width 0.3s var(--transition-ease),
+              left 0.3s var(--transition-ease);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Event card hover lift */
+.event-card {
+  transition: transform 0.3s var(--transition-ease),
+              box-shadow 0.3s var(--transition-ease);
+}
+
+.event-card:hover {
+  transform: translateY(-4px) translateX(4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Mood card hover glow */
+.mood-card {
+  transition: transform 0.3s var(--transition-ease),
+              box-shadow 0.3s var(--transition-ease);
+}
+
+.mood-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25),
+              0 0 30px rgba(212, 168, 67, 0.15);
+}
+
+/* Route card hover */
+.route-card {
+  transition: transform 0.3s var(--transition-ease),
+              box-shadow 0.3s var(--transition-ease),
+              border-color 0.3s var(--transition-ease);
+}
+
+.route-card:hover {
+  border-color: var(--light-gold);
+}
+
+/* Tip card hover */
+.tip-card {
+  transition: transform 0.3s var(--transition-ease),
+              border-color 0.3s var(--transition-ease),
+              box-shadow 0.3s var(--transition-ease);
+}
+
+.tip-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Form submit button hover */
+.submit-button {
+  transition: background-color 0.3s var(--transition-ease),
+              transform 0.2s var(--transition-ease),
+              box-shadow 0.3s var(--transition-ease);
+}
+
+.submit-button:hover:not(:disabled) {
+  background: linear-gradient(180deg, var(--light-gold) 0%, var(--rich-gold) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.4);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(212, 168, 67, 0.3);
+}
+
+/* CTA button enhanced hover */
+.cta-button {
+  transition: background-color 0.3s var(--transition-ease),
+              transform 0.2s var(--transition-ease),
+              box-shadow 0.3s var(--transition-ease);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 168, 67, 0.5);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+}
+
+/* ================================
    Reduced Motion
    ================================ */
 @media (prefers-reduced-motion: reduce) {

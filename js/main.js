@@ -107,10 +107,27 @@
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    elements.countdownDays.textContent = padNumber(days);
-    elements.countdownHours.textContent = padNumber(hours);
-    elements.countdownMinutes.textContent = padNumber(minutes);
-    elements.countdownSeconds.textContent = padNumber(seconds);
+    // Animate number changes
+    updateCountdownUnit(elements.countdownDays, padNumber(days));
+    updateCountdownUnit(elements.countdownHours, padNumber(hours));
+    updateCountdownUnit(elements.countdownMinutes, padNumber(minutes));
+    updateCountdownUnit(elements.countdownSeconds, padNumber(seconds));
+  }
+
+  function updateCountdownUnit(element, newValue) {
+    if (!element) return;
+    const currentValue = element.textContent;
+
+    // Only animate if value changed and not initial load
+    if (currentValue !== '--' && currentValue !== newValue) {
+      element.classList.add('updating');
+      setTimeout(() => {
+        element.textContent = newValue;
+        element.classList.remove('updating');
+      }, 150);
+    } else {
+      element.textContent = newValue;
+    }
   }
 
   function padNumber(num) {
@@ -347,7 +364,72 @@
   // Scroll Effects
   // ================================
   function initScrollEffects() {
-    // Intersection Observer for scroll animations will be added in Phase 9
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      // Show all elements immediately without animation
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('revealed');
+      });
+      return;
+    }
+
+    // Create Intersection Observer
+    const observerOptions = {
+      root: null, // viewport
+      rootMargin: '0px 0px -50px 0px', // trigger slightly before element enters
+      threshold: 0.1 // 10% visible
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          // Stop observing once revealed
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all reveal elements
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Stagger reveal for grouped elements
+    initStaggeredReveals();
+  }
+
+  function initStaggeredReveals() {
+    const staggerGroups = document.querySelectorAll('.reveal-stagger');
+
+    staggerGroups.forEach(group => {
+      const children = group.querySelectorAll('.reveal-item');
+      children.forEach((child, index) => {
+        child.style.transitionDelay = `${index * 0.1}s`;
+      });
+    });
+  }
+
+  // ================================
+  // Countdown Number Transitions
+  // ================================
+  function animateCountdownNumber(element, newValue) {
+    const currentValue = element.textContent;
+    if (currentValue === newValue) return;
+
+    // Add flip animation class
+    element.classList.add('flip');
+
+    // Update value after half animation
+    setTimeout(() => {
+      element.textContent = newValue;
+    }, 150);
+
+    // Remove animation class
+    setTimeout(() => {
+      element.classList.remove('flip');
+    }, 300);
   }
 
   // ================================
