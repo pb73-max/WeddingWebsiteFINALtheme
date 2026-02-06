@@ -9,7 +9,10 @@
   // Constants
   // ================================
   const WEDDING_DATE = new Date('2026-04-23T00:00:00+05:30'); // IST
-  const RSVP_ENDPOINT = ''; // Google Apps Script URL - add in Phase 12
+
+  // Google Apps Script Web App URL
+  // Instructions: See google-apps-script.js for setup, then paste your deployment URL below
+  const RSVP_ENDPOINT = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
 
   // ================================
   // State
@@ -301,23 +304,33 @@
   }
 
   async function submitRSVP(data) {
-    if (!RSVP_ENDPOINT) {
-      // Simulate network delay for demo
+    // Check if endpoint is configured
+    if (!RSVP_ENDPOINT || RSVP_ENDPOINT === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      // Demo mode - simulate network delay and log data
+      console.log('RSVP Demo Mode - Data would be submitted:', data);
       await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('RSVP Data:', data);
       return { status: 'success' };
     }
 
+    // Submit to Google Apps Script
+    // Note: Google Apps Script handles CORS automatically when deployed as web app
     const response = await fetch(RSVP_ENDPOINT, {
       method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'text/plain', // Required for Google Apps Script
+      },
       body: JSON.stringify(data)
     });
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+    // Google Apps Script always returns 200, check response content
+    const result = await response.json();
+
+    if (result.status === 'error') {
+      throw new Error(result.message || 'Submission failed');
     }
 
-    return response.json();
+    return result;
   }
 
   function showRSVPSuccess() {
