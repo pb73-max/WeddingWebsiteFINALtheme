@@ -1,8 +1,8 @@
 # Prerna & Arpit Wedding Website - Progress Tracker
 
 ## Current Status
-**Active Phase**: Phase 2: Global Layout & Navigation
-**Overall Progress**: 1/13 phases complete
+**Active Phase**: Phase 3: Hero Section
+**Overall Progress**: 2/13 phases complete
 **Blockers**: None
 
 ---
@@ -24,10 +24,14 @@
 - **Notes**: All base structure in place. Pages load without errors. CSS variables and JS IIFE structure ready.
 
 ### Phase 2: Global Layout & Navigation
-- **Status**: Not Started
-- **Completed**: -
-- **Files Created**: -
-- **Commits Made**: -
+- **Status**: Complete
+- **Completed**: Feb 6, 2026
+- **Files Modified**: css/style.css (+8.2 KB)
+- **Commits Made**:
+  - `98e5ce1` [2-1,2-2,2-3] Add batik background and enhanced content panel framing
+- **Assumptions Made**: Used CSS gradients for batik pattern placeholder (will be replaced with SVG in Phase 8)
+- **Deviations from Plan**: Combined all layout enhancements into single commit
+- **Notes**: Frame-within-frame layout complete. Batik pattern visible on desktop, gold borders, enhanced nav with dividers, polished footer.
 
 ### Phase 3: Hero Section (index.html)
 - **Status**: Not Started
@@ -120,7 +124,7 @@
 | index.html | 5.9 KB | 5.9 KB |
 | events.html | 3.3 KB | 9.2 KB |
 | travel.html | 4.1 KB | 13.3 KB |
-| css/style.css | 12.9 KB | 26.2 KB |
-| js/main.js | 6.8 KB | 33.0 KB |
-| assets/images/ | ~0 KB | 33.0 KB |
-| **Total** | **33.0 KB** | /1MB (3.3%)
+| css/style.css | 21.1 KB | 34.4 KB |
+| js/main.js | 6.8 KB | 41.2 KB |
+| assets/images/ | ~0 KB | 41.2 KB |
+| **Total** | **41.2 KB** | /1MB (4.1%)

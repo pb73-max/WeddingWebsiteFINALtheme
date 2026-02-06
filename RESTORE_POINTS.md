@@ -37,17 +37,17 @@ git reset --hard 5b7a497
 ## Phase 2: Global Layout & Navigation - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`98e5ce1` - [2-1,2-2,2-3] Add batik background and enhanced content panel framing
 
 ### Rollback Instructions
 ```bash
-git reset --hard <hash>
+git reset --hard 98e5ce1
 ```
 
 ### Files State at This Point
-- All HTML files: Navigation and footer added
-- css/style.css: Layout, nav, footer styles added
-- js/main.js: Mobile menu toggle added
+- All HTML files: Navigation and footer (unchanged from Phase 1)
+- css/style.css: Complete layout with batik background, gold frame borders, enhanced nav, polished footer
+- js/main.js: Mobile menu toggle (unchanged from Phase 1)
 
 ---
 
@@ -133,7 +133,7 @@ git reset --hard <hash>
 | Phase | Commit Hash | Description |
 |-------|-------------|-------------|
 | 1 | 5b7a497 | Project setup |
-| 2 | pending | Layout & nav |
+| 2 | 98e5ce1 | Layout & nav |
 | 3 | pending | Hero section |
 | 4 | pending | RSVP form |
 | 5 | pending | Dress code |
