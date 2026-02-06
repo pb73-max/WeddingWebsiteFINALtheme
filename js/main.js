@@ -131,25 +131,134 @@
     elements.rsvpForm = document.getElementById('rsvp-form');
     elements.rsvpSuccess = document.getElementById('rsvp-success');
     elements.rsvpError = document.getElementById('rsvp-error');
+    elements.submitBtn = document.getElementById('submit-btn');
+    elements.submitText = document.querySelector('.submit-text');
+    elements.submitLoading = document.querySelector('.submit-loading');
+    elements.rsvpAnother = document.getElementById('rsvp-another');
+    elements.rsvpRetry = document.getElementById('rsvp-retry');
 
     if (elements.rsvpForm) {
       elements.rsvpForm.addEventListener('submit', handleRSVPSubmit);
+
+      // Real-time validation on blur
+      const inputs = elements.rsvpForm.querySelectorAll('.form-input, .form-textarea');
+      inputs.forEach(input => {
+        input.addEventListener('blur', () => validateField(input));
+        input.addEventListener('input', () => clearFieldError(input));
+      });
     }
+
+    // "Submit Another" button
+    if (elements.rsvpAnother) {
+      elements.rsvpAnother.addEventListener('click', resetRSVPForm);
+    }
+
+    // "Try Again" button
+    if (elements.rsvpRetry) {
+      elements.rsvpRetry.addEventListener('click', hideRSVPError);
+    }
+  }
+
+  function validateField(input) {
+    const name = input.name;
+    const value = input.value.trim();
+    const errorEl = document.getElementById(`${name}-error`) ||
+                    input.parentElement.querySelector('.form-error');
+
+    let errorMessage = '';
+
+    // Required field validation
+    if (input.required && !value) {
+      errorMessage = 'This field is required';
+    }
+
+    // Specific validations
+    if (value) {
+      switch (name) {
+        case 'email':
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            errorMessage = 'Please enter a valid email address';
+          }
+          break;
+        case 'phone':
+          // Basic phone validation - at least 10 digits
+          const digits = value.replace(/\D/g, '');
+          if (digits.length < 10) {
+            errorMessage = 'Please enter a valid phone number';
+          }
+          break;
+        case 'guestNames':
+          // Check if at least one name is entered
+          const names = value.split('\n').filter(n => n.trim());
+          if (names.length === 0) {
+            errorMessage = 'Please enter at least one guest name';
+          }
+          break;
+      }
+    }
+
+    // Show/hide error
+    if (errorMessage) {
+      input.classList.add('error');
+      if (errorEl) errorEl.textContent = errorMessage;
+      return false;
+    } else {
+      input.classList.remove('error');
+      if (errorEl) errorEl.textContent = '';
+      return true;
+    }
+  }
+
+  function clearFieldError(input) {
+    if (input.classList.contains('error')) {
+      input.classList.remove('error');
+      const errorEl = input.parentElement.querySelector('.form-error');
+      if (errorEl) errorEl.textContent = '';
+    }
+  }
+
+  function validateForm() {
+    const inputs = elements.rsvpForm.querySelectorAll('[required]');
+    let isValid = true;
+
+    inputs.forEach(input => {
+      if (!validateField(input)) {
+        isValid = false;
+      }
+    });
+
+    // Also validate email if filled (not required but should be valid)
+    const emailInput = elements.rsvpForm.querySelector('[name="email"]');
+    if (emailInput && emailInput.value.trim()) {
+      if (!validateField(emailInput)) {
+        isValid = false;
+      }
+    }
+
+    return isValid;
   }
 
   async function handleRSVPSubmit(e) {
     e.preventDefault();
 
-    // Validation will be added in Phase 4
+    // Validate form
+    if (!validateForm()) {
+      // Focus first error field
+      const firstError = elements.rsvpForm.querySelector('.error');
+      if (firstError) firstError.focus();
+      return;
+    }
+
+    // Get form data
     const formData = new FormData(elements.rsvpForm);
     const data = Object.fromEntries(formData.entries());
 
+    // Calculate guest count
+    const guestNames = data.guestNames.split('\n').filter(n => n.trim());
+    data.guestCount = guestNames.length;
+
     // Show loading state
-    const submitBtn = elements.rsvpForm.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-    }
+    setLoadingState(true);
 
     try {
       await submitRSVP(data);
@@ -158,18 +267,28 @@
       console.error('RSVP submission error:', error);
       showRSVPError();
     } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send RSVP';
-      }
+      setLoadingState(false);
+    }
+  }
+
+  function setLoadingState(isLoading) {
+    if (elements.submitBtn) {
+      elements.submitBtn.disabled = isLoading;
+    }
+    if (elements.submitText) {
+      elements.submitText.hidden = isLoading;
+    }
+    if (elements.submitLoading) {
+      elements.submitLoading.hidden = !isLoading;
     }
   }
 
   async function submitRSVP(data) {
     if (!RSVP_ENDPOINT) {
-      // Placeholder - remove when endpoint is added
+      // Simulate network delay for demo
+      await new Promise(resolve => setTimeout(resolve, 1500));
       console.log('RSVP Data:', data);
-      return Promise.resolve({ status: 'success' });
+      return { status: 'success' };
     }
 
     const response = await fetch(RSVP_ENDPOINT, {
@@ -188,10 +307,40 @@
     if (elements.rsvpForm) elements.rsvpForm.hidden = true;
     if (elements.rsvpSuccess) elements.rsvpSuccess.hidden = false;
     if (elements.rsvpError) elements.rsvpError.hidden = true;
+
+    // Scroll to success message
+    if (elements.rsvpSuccess) {
+      elements.rsvpSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   function showRSVPError() {
     if (elements.rsvpError) elements.rsvpError.hidden = false;
+  }
+
+  function hideRSVPError() {
+    if (elements.rsvpError) elements.rsvpError.hidden = true;
+  }
+
+  function resetRSVPForm() {
+    if (elements.rsvpForm) {
+      elements.rsvpForm.reset();
+      elements.rsvpForm.hidden = false;
+
+      // Clear all error states
+      const errorInputs = elements.rsvpForm.querySelectorAll('.error');
+      errorInputs.forEach(input => input.classList.remove('error'));
+
+      const errorMessages = elements.rsvpForm.querySelectorAll('.form-error');
+      errorMessages.forEach(el => el.textContent = '');
+    }
+    if (elements.rsvpSuccess) elements.rsvpSuccess.hidden = true;
+    if (elements.rsvpError) elements.rsvpError.hidden = true;
+
+    // Scroll to form
+    if (elements.rsvpForm) {
+      elements.rsvpForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   // ================================

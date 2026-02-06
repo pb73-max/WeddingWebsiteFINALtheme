@@ -209,21 +209,132 @@
 
     <!-- RSVP Section -->
     <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
-      <div class="content-panel">
+      <div class="content-panel rsvp-panel">
         <h2 id="rsvp-title" class="section-title">RSVP</h2>
         <p class="section-subtitle">Please respond by 14th March 2026</p>
 
         <form class="rsvp-form" id="rsvp-form" novalidate>
-          <!-- Form fields will be added in Phase 4 -->
+          <!-- Your Name -->
+          <div class="form-group">
+            <label for="rsvp-name" class="form-label">
+              Your Name <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="rsvp-name"
+              name="name"
+              class="form-input"
+              required
+              autocomplete="name"
+              placeholder="Enter your full name"
+            >
+            <span class="form-error" id="name-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Phone / WhatsApp -->
+          <div class="form-group">
+            <label for="rsvp-phone" class="form-label">
+              Phone / WhatsApp <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="tel"
+              id="rsvp-phone"
+              name="phone"
+              class="form-input"
+              required
+              autocomplete="tel"
+              placeholder="+91 98765 43210"
+            >
+            <span class="form-error" id="phone-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="rsvp-email" class="form-label">
+              Email <span class="optional">(optional)</span>
+            </label>
+            <input
+              type="email"
+              id="rsvp-email"
+              name="email"
+              class="form-input"
+              autocomplete="email"
+              placeholder="your@email.com"
+            >
+            <span class="form-error" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Guest Names -->
+          <div class="form-group">
+            <label for="rsvp-guests" class="form-label">
+              Names of All Attending Guests <span class="required" aria-hidden="true">*</span>
+            </label>
+            <p class="form-hint">Include yourself and anyone accompanying you (one name per line)</p>
+            <textarea
+              id="rsvp-guests"
+              name="guestNames"
+              class="form-textarea"
+              required
+              rows="4"
+              placeholder="Prerna Agarwal&#10;Arpit Bhatia&#10;..."
+            ></textarea>
+            <span class="form-error" id="guests-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Dietary Requirements -->
+          <div class="form-group">
+            <label for="rsvp-dietary" class="form-label">
+              Dietary Requirements <span class="optional">(optional)</span>
+            </label>
+            <input
+              type="text"
+              id="rsvp-dietary"
+              name="dietary"
+              class="form-input"
+              placeholder="Vegetarian, allergies, etc."
+            >
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="rsvp-message" class="form-label">
+              Message for the Couple <span class="optional">(optional)</span>
+            </label>
+            <textarea
+              id="rsvp-message"
+              name="message"
+              class="form-textarea"
+              rows="3"
+              placeholder="Share your wishes..."
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button type="submit" class="submit-button" id="submit-btn">
+              <span class="submit-text">Send RSVP</span>
+              <span class="submit-loading" hidden>
+                <span class="spinner" aria-hidden="true"></span>
+                Sending...
+              </span>
+            </button>
+          </div>
         </form>
 
-        <!-- Success/Error states will be added -->
+        <!-- Success State -->
         <div class="rsvp-success" id="rsvp-success" hidden>
-          <p>Thank you for your RSVP!</p>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h3 class="success-title">Thank You!</h3>
+          <p class="success-message">Your RSVP has been received. We can't wait to celebrate with you!</p>
+          <button type="button" class="success-another" id="rsvp-another">Submit Another Response</button>
         </div>
 
+        <!-- Error State -->
         <div class="rsvp-error" id="rsvp-error" hidden>
-          <p>Something went wrong. Please try again.</p>
+          <div class="error-icon" aria-hidden="true">!</div>
+          <h3 class="error-title">Something Went Wrong</h3>
+          <p class="error-message">Please try again or contact us directly.</p>
+          <button type="button" class="error-retry" id="rsvp-retry">Try Again</button>
         </div>
       </div>
     </section>
