@@ -1439,6 +1439,351 @@ ul {
   );
 }
 
+/* ================================
+   Events Timeline
+   ================================ */
+.events-timeline {
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xxl);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 58, 42, 0.2) 0%,
+    rgba(26, 58, 42, 0.3) 100%
+  );
+}
+
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Vertical timeline line */
+.timeline-line {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    var(--metallic-gold) 0%,
+    var(--rich-gold) 50%,
+    var(--metallic-gold) 100%
+  );
+  border-radius: 2px;
+}
+
+/* Day Header */
+.timeline-day {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.timeline-day:last-child {
+  margin-bottom: 0;
+}
+
+.day-header {
+  position: relative;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--emerald-green) 0%, var(--dark-green) 100%);
+  border: 2px solid var(--metallic-gold);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-lg);
+  margin-left: var(--spacing-lg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.day-marker {
+  position: absolute;
+  left: -48px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--rich-gold);
+  border: 3px solid var(--light-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.3);
+}
+
+.day-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--light-gold);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.day-date {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--cream);
+  opacity: 0.9;
+}
+
+/* Event Cards Container */
+.timeline-events {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-left: var(--spacing-lg);
+}
+
+/* Event Card Base */
+.event-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform var(--transition-speed) var(--transition-ease),
+              box-shadow var(--transition-speed) var(--transition-ease);
+}
+
+.event-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Time marker on timeline */
+.event-time-marker {
+  position: absolute;
+  left: -40px;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+}
+
+.time-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--cream);
+  border: 2px solid var(--metallic-gold);
+  border-radius: 50%;
+}
+
+/* Event Content */
+.event-content {
+  padding: var(--spacing-lg);
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.event-time {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.event-meal {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.event-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: var(--spacing-xs);
+}
+
+.event-theme {
+  font-family: var(--font-script);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  margin-bottom: var(--spacing-md);
+}
+
+.event-description {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: var(--spacing-sm);
+}
+
+.event-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.event-dress {
+  flex: 1;
+  min-width: 200px;
+}
+
+.dress-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.dress-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.event-colors {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.event-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.event-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: var(--spacing-sm);
+}
+
+/* Heritage Theme Event */
+.event-card-heritage {
+  background: linear-gradient(135deg, #A0522D 0%, #8B4726 100%);
+  border: 2px solid #B8943E;
+  color: #FFF5E1;
+}
+
+.event-card-heritage .event-theme {
+  color: #E8B830;
+}
+
+/* Glamour Theme Event */
+.event-card-glamour {
+  background: linear-gradient(135deg, #1A1A3E 0%, #151530 100%);
+  border: 2px solid #D4AF37;
+  color: #FFFFFF;
+}
+
+.event-card-glamour .event-theme {
+  color: #D4AF37;
+}
+
+/* Carnival Theme Event */
+.event-card-carnival {
+  background: linear-gradient(135deg, #F5A623 0%, #E08B12 100%);
+  border: 2px solid #C9A84C;
+  color: #3A2510;
+}
+
+.event-card-carnival .event-theme {
+  color: #7B2D3B;
+}
+
+.event-card-carnival .event-swatch {
+  border-color: rgba(58, 37, 16, 0.4);
+}
+
+/* Royal Theme Event */
+.event-card-royal {
+  background: linear-gradient(135deg, #6B1D3A 0%, #521530 100%);
+  border: 2px solid #D4A843;
+  color: #FFF8E7;
+}
+
+.event-card-royal .event-name {
+  color: #F2D98B;
+}
+
+/* Event Group (Royal Wedding) */
+.event-group {
+  background: linear-gradient(180deg, rgba(107, 29, 58, 0.3) 0%, rgba(74, 18, 40, 0.4) 100%);
+  border: 2px solid var(--metallic-gold);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  position: relative;
+}
+
+.group-banner {
+  background: linear-gradient(90deg, var(--deep-gold) 0%, var(--rich-gold) 50%, var(--deep-gold) 100%);
+  color: var(--dark-green);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  margin: calc(-1 * var(--spacing-md));
+  margin-bottom: var(--spacing-md);
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+
+.group-theme {
+  display: block;
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.group-dress {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  color: #4A1228;
+}
+
+.group-colors {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0 var(--spacing-xs);
+}
+
+/* Grouped event cards (within Royal group) */
+.event-card-grouped {
+  margin-bottom: var(--spacing-sm);
+  border-radius: 6px;
+}
+
+.event-card-grouped:last-of-type {
+  margin-bottom: 0;
+}
+
+.event-card-grouped .event-content {
+  padding: var(--spacing-md);
+}
+
+.event-card-grouped .event-name {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Intimate event indicator */
+.event-card-intimate {
+  position: relative;
+}
+
+.event-card-intimate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  box-shadow: inset 0 0 20px rgba(242, 217, 139, 0.15);
+  pointer-events: none;
+}
+
 /* Corner Lotus/Fan Motifs */
 .corner-motif {
   position: absolute;
@@ -1797,6 +2142,91 @@ section:not(:last-of-type)::after {
   .swatch {
     width: 24px;
     height: 24px;
+  }
+
+  /* Events Timeline mobile */
+  .timeline-container {
+    padding-left: 30px;
+  }
+
+  .timeline-line {
+    left: 10px;
+    width: 2px;
+  }
+
+  .day-header {
+    margin-left: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .day-marker {
+    left: -38px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .day-title {
+    font-size: 1.2rem;
+  }
+
+  .timeline-events {
+    padding-left: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .event-time-marker {
+    left: -30px;
+  }
+
+  .time-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .event-content {
+    padding: var(--spacing-md);
+  }
+
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-name {
+    font-size: 1.1rem;
+  }
+
+  .event-theme {
+    font-size: 1rem;
+  }
+
+  .event-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-colors {
+    margin-top: var(--spacing-sm);
+  }
+
+  .group-banner {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .group-theme {
+    font-size: 1rem;
+  }
+
+  .group-dress {
+    font-size: 1rem;
+  }
+
+  .event-card-grouped .event-content {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .event-card-grouped .event-name {
+    font-size: 1rem;
   }
 }
 

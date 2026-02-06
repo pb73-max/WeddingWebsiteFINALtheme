@@ -55,30 +55,173 @@
     <section class="events-timeline" aria-labelledby="timeline-title">
       <h2 id="timeline-title" class="visually-hidden">Event Schedule</h2>
 
-      <!-- Day 1 -->
-      <div class="timeline-day">
-        <div class="day-header">
-          <h3 class="day-title">Day 1</h3>
-          <p class="day-date">Wednesday, 23 April 2026</p>
+      <div class="timeline-container">
+        <!-- Timeline line -->
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <!-- Day 1 -->
+        <div class="timeline-day">
+          <div class="day-header">
+            <div class="day-marker" aria-hidden="true"></div>
+            <h3 class="day-title">Day 1</h3>
+            <p class="day-date">Wednesday, 23 April 2026</p>
+          </div>
+
+          <div class="timeline-events">
+            <!-- Event 1: Heritage -->
+            <article class="event-card event-card-heritage">
+              <div class="event-time-marker" aria-hidden="true">
+                <span class="time-dot"></span>
+              </div>
+              <div class="event-content">
+                <div class="event-header">
+                  <span class="event-time">12:00 PM onwards</span>
+                  <span class="event-meal">🍽 Lunch + High Tea</span>
+                </div>
+                <h4 class="event-name">Bhaat + Ghari Pooja + Mehendi</h4>
+                <p class="event-theme">✧ Celebrate our Heritage ✧</p>
+                <div class="event-details">
+                  <div class="event-dress">
+                    <span class="dress-label">Dress Code:</span>
+                    <span class="dress-text">Anything that describes your heritage!</span>
+                  </div>
+                  <div class="event-colors" aria-label="Theme colors">
+                    <span class="event-swatch" style="background: #A0522D;"></span>
+                    <span class="event-swatch" style="background: #E8B830;"></span>
+                    <span class="event-swatch" style="background: #4A6741;"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Event 2: Glamour -->
+            <article class="event-card event-card-glamour">
+              <div class="event-time-marker" aria-hidden="true">
+                <span class="time-dot"></span>
+              </div>
+              <div class="event-content">
+                <div class="event-header">
+                  <span class="event-time">7:00 PM onwards</span>
+                  <span class="event-meal">🍽 Dinner</span>
+                </div>
+                <h4 class="event-name">Engagement Party</h4>
+                <p class="event-theme">✧ Modern Glamour ✧</p>
+                <div class="event-details">
+                  <div class="event-dress">
+                    <span class="dress-label">Dress Code:</span>
+                    <span class="dress-text">Sparkle and Dazzle!</span>
+                  </div>
+                  <div class="event-colors" aria-label="Theme colors">
+                    <span class="event-swatch" style="background: #1A1A3E;"></span>
+                    <span class="event-swatch" style="background: #D4AF37;"></span>
+                    <span class="event-swatch" style="background: #C78B8B;"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
 
-        <div class="timeline-events">
-          <!-- Event cards will be added in Phase 6 -->
+        <!-- Day 2 -->
+        <div class="timeline-day">
+          <div class="day-header">
+            <div class="day-marker" aria-hidden="true"></div>
+            <h3 class="day-title">Day 2</h3>
+            <p class="day-date">Thursday, 24 April 2026</p>
+          </div>
+
+          <div class="timeline-events">
+            <!-- Event 3: Haldi -->
+            <article class="event-card event-card-carnival">
+              <div class="event-time-marker" aria-hidden="true">
+                <span class="time-dot"></span>
+              </div>
+              <div class="event-content">
+                <div class="event-header">
+                  <span class="event-time">11:00 AM onwards</span>
+                  <span class="event-meal">🍽 Lunch</span>
+                </div>
+                <h4 class="event-name">Haldi</h4>
+                <p class="event-theme">✧ Floral Carnival ✧</p>
+                <div class="event-details">
+                  <div class="event-dress">
+                    <span class="dress-label">Dress Code:</span>
+                    <span class="dress-text">Haldi hues and Florals</span>
+                  </div>
+                  <div class="event-colors" aria-label="Theme colors">
+                    <span class="event-swatch" style="background: #F5A623;"></span>
+                    <span class="event-swatch" style="background: #FFC725;"></span>
+                    <span class="event-swatch" style="background: #E84B8A;"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Royal Wedding Group -->
+            <div class="event-group event-group-royal">
+              <div class="group-banner">
+                <span class="group-theme">Royal Indian Wedding</span>
+                <span class="group-dress">Ethnic Elegance</span>
+              </div>
+
+              <!-- Event 4: Baraat -->
+              <article class="event-card event-card-royal event-card-grouped">
+                <div class="event-time-marker" aria-hidden="true">
+                  <span class="time-dot"></span>
+                </div>
+                <div class="event-content">
+                  <div class="event-header">
+                    <span class="event-time">6:00 PM</span>
+                    <span class="event-meal">🍽 High Tea</span>
+                  </div>
+                  <h4 class="event-name">Baraat</h4>
+                  <p class="event-description">The groom's grand procession arrives</p>
+                </div>
+              </article>
+
+              <!-- Event 5: Jaimala + Reception -->
+              <article class="event-card event-card-royal event-card-grouped">
+                <div class="event-time-marker" aria-hidden="true">
+                  <span class="time-dot"></span>
+                </div>
+                <div class="event-content">
+                  <div class="event-header">
+                    <span class="event-time">8:00 PM</span>
+                    <span class="event-meal">🍽 Dinner</span>
+                  </div>
+                  <h4 class="event-name">Jaimala + Reception</h4>
+                  <p class="event-description">Exchange of garlands and celebration</p>
+                </div>
+              </article>
+
+              <!-- Event 6: Pheras -->
+              <article class="event-card event-card-royal event-card-grouped event-card-intimate">
+                <div class="event-time-marker" aria-hidden="true">
+                  <span class="time-dot"></span>
+                </div>
+                <div class="event-content">
+                  <div class="event-header">
+                    <span class="event-time">11:00 PM</span>
+                    <span class="event-meal">🍽 Supper</span>
+                  </div>
+                  <h4 class="event-name">Pheras</h4>
+                  <p class="event-description">The sacred wedding ceremony</p>
+                  <span class="event-tag">Close Family & Friends</span>
+                </div>
+              </article>
+
+              <!-- Group color swatches -->
+              <div class="group-colors" aria-label="Theme colors">
+                <span class="event-swatch" style="background: #6B1D3A;"></span>
+                <span class="event-swatch" style="background: #D4A843;"></span>
+                <span class="event-swatch" style="background: #C41E3A;"></span>
+                <span class="event-swatch" style="background: #1A5E3A;"></span>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
-
-      <!-- Day 2 -->
-      <div class="timeline-day">
-        <div class="day-header">
-          <h3 class="day-title">Day 2</h3>
-          <p class="day-date">Thursday, 24 April 2026</p>
-        </div>
-
-        <div class="timeline-events">
-          <!-- Event cards will be added in Phase 6 -->
-        </div>
-      </div>
-
     </section>
 
   </main>
