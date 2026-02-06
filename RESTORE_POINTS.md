@@ -70,7 +70,17 @@ git reset --hard b55fc90
 ## Phase 4: RSVP Form - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`1175e76` - [4-1 to 4-9] Add complete RSVP form
+
+### Rollback Instructions
+```bash
+git reset --hard 1175e76
+```
+
+### Files State at This Point
+- index.html: Complete RSVP form with all fields, validation, success/error states
+- css/style.css: Form styling, input states, button effects, responsive adjustments
+- js/main.js: Form validation, submission handling, state management
 
 ---
 
@@ -144,7 +154,7 @@ git reset --hard b55fc90
 | 1 | 5b7a497 | Project setup |
 | 2 | 98e5ce1 | Layout & nav |
 | 3 | b55fc90 | Hero section |
-| 4 | pending | RSVP form |
+| 4 | 1175e76 | RSVP form |
 | 5 | pending | Dress code |
 | 6 | pending | Events timeline |
 | 7 | pending | Travel guide |
