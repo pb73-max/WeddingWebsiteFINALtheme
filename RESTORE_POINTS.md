@@ -135,7 +135,17 @@ git reset --hard 075df86
 ## Phase 8: SVG Assets & Decorative Elements - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`ee9b99b` - [8-1 to 8-9] Add SVG assets and shimmer animations
+
+### Rollback Instructions
+```bash
+git reset --hard ee9b99b
+```
+
+### Files State at This Point
+- assets/images/: 7 SVG files (ganesha, florals, batik, lotus, filigree, ribbon)
+- index.html: Updated to use external SVG references
+- css/style.css: Batik background, shimmer animations added
 
 ---
 
@@ -185,7 +195,7 @@ git reset --hard 075df86
 | 5 | c5b0688 | Dress code |
 | 6 | 4a24a6f | Events timeline |
 | 7 | 075df86 | Travel guide |
-| 8 | pending | SVG assets |
+| 8 | ee9b99b | SVG assets |
 | 9 | pending | Animations |
 | 10 | pending | Responsive |
 | 11 | pending | Accessibility |
