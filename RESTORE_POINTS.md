@@ -87,7 +87,16 @@ git reset --hard 1175e76
 ## Phase 5: Dress Code Section - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`c5b0688` - [5-1 to 5-5] Add dress code section with 4 themed mood cards
+
+### Rollback Instructions
+```bash
+git reset --hard c5b0688
+```
+
+### Files State at This Point
+- index.html: 4 dress code mood cards with themed styling and color swatches
+- css/style.css: Card grid, themed backgrounds, swatch styling, responsive adjustments
 
 ---
 
@@ -155,7 +164,7 @@ git reset --hard 1175e76
 | 2 | 98e5ce1 | Layout & nav |
 | 3 | b55fc90 | Hero section |
 | 4 | 1175e76 | RSVP form |
-| 5 | pending | Dress code |
+| 5 | c5b0688 | Dress code |
 | 6 | pending | Events timeline |
 | 7 | pending | Travel guide |
 | 8 | pending | SVG assets |

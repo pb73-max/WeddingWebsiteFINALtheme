@@ -1,8 +1,8 @@
 # Prerna & Arpit Wedding Website - Progress Tracker
 
 ## Current Status
-**Active Phase**: Phase 5: Dress Code Section
-**Overall Progress**: 4/13 phases complete
+**Active Phase**: Phase 6: Events Timeline
+**Overall Progress**: 5/13 phases complete
 **Blockers**: None
 
 ---
@@ -56,10 +56,14 @@
 - **Notes**: Form has real-time validation, loading states, success/error handling. Guest count auto-calculated.
 
 ### Phase 5: Dress Code Section (index.html)
-- **Status**: Not Started
-- **Completed**: -
-- **Files Created**: -
-- **Commits Made**: -
+- **Status**: Complete
+- **Completed**: Feb 6, 2026
+- **Files Modified**: index.html (+3.6 KB), css/style.css (+4.6 KB)
+- **Commits Made**:
+  - `c5b0688` [5-1 to 5-5] Add dress code section with 4 themed mood cards
+- **Assumptions Made**: None
+- **Deviations from Plan**: None
+- **Notes**: 4 themed cards with color swatches, responsive grid layout, hover effects
 
 ### Phase 6: Events Timeline (events.html)
 - **Status**: Not Started
@@ -131,10 +135,10 @@
 
 | File | Size | Running Total |
 |------|------|---------------|
-| index.html | 15.0 KB | 15.0 KB |
-| events.html | 3.3 KB | 18.3 KB |
-| travel.html | 4.1 KB | 22.4 KB |
-| css/style.css | 33.8 KB | 56.2 KB |
-| js/main.js | 11.4 KB | 67.6 KB |
-| assets/images/ | ~0 KB | 67.6 KB |
-| **Total** | **67.6 KB** | /1MB (6.8%)
+| index.html | 18.6 KB | 18.6 KB |
+| events.html | 3.3 KB | 21.9 KB |
+| travel.html | 4.1 KB | 26.0 KB |
+| css/style.css | 38.4 KB | 64.4 KB |
+| js/main.js | 11.4 KB | 75.8 KB |
+| assets/images/ | ~0 KB | 75.8 KB |
+| **Total** | **75.8 KB** | /1MB (7.6%)
