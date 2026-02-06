@@ -184,7 +184,16 @@ git reset --hard beb91de
 ## Phase 11: Accessibility Audit - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`ffd6830` - [11-1 to 11-7] Accessibility audit improvements
+
+### Rollback Instructions
+```bash
+git reset --hard ffd6830
+```
+
+### Files State at This Point
+- css/style.css: Consolidated skip-link, sr-only class, high contrast mode
+- All HTML files: ARIA labels, live regions, landmark roles, form accessibility
 
 ---
 
@@ -216,6 +225,6 @@ git reset --hard beb91de
 | 8 | ee9b99b | SVG assets |
 | 9 | fbbc186 | Animations |
 | 10 | beb91de | Responsive |
-| 11 | pending | Accessibility |
+| 11 | ffd6830 | Accessibility |
 | 12 | pending | RSVP backend |
 | 13 | pending | Deployment |
