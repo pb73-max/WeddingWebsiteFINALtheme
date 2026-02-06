@@ -110,27 +110,15 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-light);
-  background-color: var(--batik-pink);
+  background-color: var(--emerald-green);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Batik pattern background - CSS placeholder until SVG added in Phase 8 */
-  background-image:
-    /* Paisley-like pattern layer 1 */
-    radial-gradient(ellipse 30px 40px at 20px 20px, var(--batik-blue) 0%, transparent 70%),
-    radial-gradient(ellipse 25px 35px at 60px 50px, var(--hot-pink) 0%, transparent 70%),
-    radial-gradient(ellipse 20px 30px at 40px 80px, var(--warm-orange) 0%, transparent 70%),
-    radial-gradient(ellipse 35px 25px at 80px 30px, var(--blue-violet) 0%, transparent 70%),
-    /* Paisley-like pattern layer 2 */
-    radial-gradient(ellipse 28px 38px at 100px 70px, var(--batik-blue) 0%, transparent 70%),
-    radial-gradient(ellipse 22px 32px at 30px 120px, var(--hot-pink) 0%, transparent 70%),
-    radial-gradient(ellipse 32px 22px at 70px 100px, var(--grape-purple) 0%, transparent 70%),
-    /* Gold accent dots */
-    radial-gradient(circle 4px at 50px 40px, var(--metallic-gold) 0%, transparent 100%),
-    radial-gradient(circle 3px at 90px 90px, var(--metallic-gold) 0%, transparent 100%),
-    radial-gradient(circle 4px at 20px 100px, var(--metallic-gold) 0%, transparent 100%);
-  background-size: 120px 140px;
+  /* Batik pattern SVG background */
+  background-image: url('../assets/images/batik-pattern.svg');
+  background-size: 200px 200px;
   background-position: 0 0;
+  background-repeat: repeat;
 }
 
 img {
@@ -1789,14 +1777,10 @@ ul {
   position: absolute;
   width: 50px;
   height: 50px;
-  opacity: 0.8;
-  /* CSS fan/lotus shape - will be replaced with SVG in Phase 8 */
-  background:
-    radial-gradient(ellipse 25px 35px at 50% 100%, var(--hot-pink) 0%, transparent 70%),
-    radial-gradient(ellipse 20px 30px at 30% 80%, rgba(232, 75, 138, 0.6) 0%, transparent 70%),
-    radial-gradient(ellipse 20px 30px at 70% 80%, rgba(232, 75, 138, 0.6) 0%, transparent 70%),
-    radial-gradient(ellipse 15px 25px at 15% 60%, rgba(232, 75, 138, 0.4) 0%, transparent 70%),
-    radial-gradient(ellipse 15px 25px at 85% 60%, rgba(232, 75, 138, 0.4) 0%, transparent 70%);
+  opacity: 0.75;
+  background-image: url('../assets/images/lotus-corner.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .corner-top-left {
@@ -2693,6 +2677,108 @@ section:not(:last-of-type)::after {
 ::-moz-selection {
   background: var(--rich-gold);
   color: var(--dark-green);
+}
+
+/* ================================
+   Shimmer & Decorative Animations
+   ================================ */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(212, 168, 67, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(242, 217, 139, 0.6));
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Gold shimmer effect for borders and accents */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    var(--metallic-gold) 0%,
+    var(--light-gold) 25%,
+    #FFF5D4 50%,
+    var(--light-gold) 75%,
+    var(--metallic-gold) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Apply shimmer to Ganesha icon */
+.ganesha-icon {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Gentle float for florals */
+.floral-left {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.floral-right {
+  animation: gentle-float 6s ease-in-out infinite 0.5s;
+}
+
+/* Gold ribbon shimmer */
+.gold-ribbon {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Countdown frame hover glow */
+.countdown-frame:hover {
+  box-shadow: 0 0 20px rgba(212, 168, 67, 0.5);
+}
+
+/* CTA button shimmer on hover */
+.cta-button:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 0.8s ease-out;
 }
 
 /* ================================

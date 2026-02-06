@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40">
+  <defs>
+    <linearGradient id="filigree-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#A8872A;stop-opacity:0"/>
+      <stop offset="20%" style="stop-color:#D4A843"/>
+      <stop offset="50%" style="stop-color:#F2D98B"/>
+      <stop offset="80%" style="stop-color:#D4A843"/>
+      <stop offset="100%" style="stop-color:#A8872A;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="filigree-gold-solid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F2D98B"/>
+      <stop offset="50%" style="stop-color:#D4A843"/>
+      <stop offset="100%" style="stop-color:#A8872A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Center line -->
+  <line x1="0" y1="20" x2="200" y2="20" stroke="url(#filigree-gold)" stroke-width="1"/>
+
+  <!-- Center medallion -->
+  <g transform="translate(100, 20)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="url(#filigree-gold-solid)" stroke-width="1"/>
+    <circle cx="0" cy="0" r="4" fill="url(#filigree-gold-solid)"/>
+    <!-- Radiating lines -->
+    <line x1="-12" y1="0" x2="-20" y2="0" stroke="url(#filigree-gold-solid)" stroke-width="0.5"/>
+    <line x1="12" y1="0" x2="20" y2="0" stroke="url(#filigree-gold-solid)" stroke-width="0.5"/>
+    <line x1="0" y1="-12" x2="0" y2="-16" stroke="url(#filigree-gold-solid)" stroke-width="0.5"/>
+    <line x1="0" y1="12" x2="0" y2="16" stroke="url(#filigree-gold-solid)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Left scrollwork -->
+  <g transform="translate(50, 20)">
+    <path d="M0 0 Q-15 -8 -25 0 Q-15 8 0 0" fill="none" stroke="url(#filigree-gold-solid)" stroke-width="0.8"/>
+    <circle cx="-25" cy="0" r="2" fill="url(#filigree-gold-solid)"/>
+  </g>
+
+  <!-- Right scrollwork -->
+  <g transform="translate(150, 20)">
+    <path d="M0 0 Q15 -8 25 0 Q15 8 0 0" fill="none" stroke="url(#filigree-gold-solid)" stroke-width="0.8"/>
+    <circle cx="25" cy="0" r="2" fill="url(#filigree-gold-solid)"/>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="30" cy="20" r="1.5" fill="url(#filigree-gold-solid)"/>
+  <circle cx="70" cy="20" r="1.5" fill="url(#filigree-gold-solid)"/>
+  <circle cx="130" cy="20" r="1.5" fill="url(#filigree-gold-solid)"/>
+  <circle cx="170" cy="20" r="1.5" fill="url(#filigree-gold-solid)"/>
+
+  <!-- Curved accents -->
+  <path d="M25 12 Q35 8 45 12" fill="none" stroke="url(#filigree-gold-solid)" stroke-width="0.5" opacity="0.7"/>
+  <path d="M25 28 Q35 32 45 28" fill="none" stroke="url(#filigree-gold-solid)" stroke-width="0.5" opacity="0.7"/>
+  <path d="M155 12 Q165 8 175 12" fill="none" stroke="url(#filigree-gold-solid)" stroke-width="0.5" opacity="0.7"/>
+  <path d="M155 28 Q165 32 175 28" fill="none" stroke="url(#filigree-gold-solid)" stroke-width="0.5" opacity="0.7"/>
+</svg>

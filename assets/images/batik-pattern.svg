@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Gold gradient for motifs -->
+    <linearGradient id="batik-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A843;stop-opacity:0.15"/>
+      <stop offset="50%" style="stop-color:#A8872A;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#D4A843;stop-opacity:0.15"/>
+    </linearGradient>
+    <linearGradient id="batik-gold-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F2D98B;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#D4A843;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" fill="transparent"/>
+
+  <!-- Center medallion -->
+  <g transform="translate(100, 100)">
+    <!-- Outer rings -->
+    <circle cx="0" cy="0" r="45" fill="none" stroke="url(#batik-gold)" stroke-width="1"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+
+    <!-- 8-pointed star pattern -->
+    <path d="M0 -35 L5 -10 L35 0 L5 10 L0 35 L-5 10 L-35 0 L-5 -10 Z"
+          fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.5"/>
+
+    <!-- Inner diamond -->
+    <path d="M0 -20 L20 0 L0 20 L-20 0 Z"
+          fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+
+    <!-- Center dot cluster -->
+    <circle cx="0" cy="0" r="8" fill="url(#batik-gold-accent)"/>
+    <circle cx="0" cy="0" r="4" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+
+    <!-- Petal shapes around center -->
+    <g>
+      <ellipse cx="0" cy="-25" rx="4" ry="8" fill="url(#batik-gold-accent)"/>
+      <ellipse cx="0" cy="25" rx="4" ry="8" fill="url(#batik-gold-accent)"/>
+      <ellipse cx="25" cy="0" rx="8" ry="4" fill="url(#batik-gold-accent)"/>
+      <ellipse cx="-25" cy="0" rx="8" ry="4" fill="url(#batik-gold-accent)"/>
+    </g>
+
+    <!-- Diagonal petals -->
+    <g transform="rotate(45)">
+      <ellipse cx="0" cy="-25" rx="3" ry="6" fill="url(#batik-gold-accent)"/>
+      <ellipse cx="0" cy="25" rx="3" ry="6" fill="url(#batik-gold-accent)"/>
+      <ellipse cx="25" cy="0" rx="6" ry="3" fill="url(#batik-gold-accent)"/>
+      <ellipse cx="-25" cy="0" rx="6" ry="3" fill="url(#batik-gold-accent)"/>
+    </g>
+  </g>
+
+  <!-- Corner motifs (will tile at edges) -->
+  <!-- Top-left corner -->
+  <g transform="translate(0, 0)">
+    <path d="M0 30 Q15 15 30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
+    <circle cx="10" cy="10" r="6" fill="url(#batik-gold-accent)"/>
+    <circle cx="10" cy="10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Top-right corner -->
+  <g transform="translate(200, 0)">
+    <path d="M0 30 Q-15 15 -30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
+    <circle cx="-10" cy="10" r="6" fill="url(#batik-gold-accent)"/>
+    <circle cx="-10" cy="10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Bottom-left corner -->
+  <g transform="translate(0, 200)">
+    <path d="M0 -30 Q15 -15 30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
+    <circle cx="10" cy="-10" r="6" fill="url(#batik-gold-accent)"/>
+    <circle cx="10" cy="-10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Bottom-right corner -->
+  <g transform="translate(200, 200)">
+    <path d="M0 -30 Q-15 -15 -30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
+    <circle cx="-10" cy="-10" r="6" fill="url(#batik-gold-accent)"/>
+    <circle cx="-10" cy="-10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Edge connectors -->
+  <!-- Top edge -->
+  <g transform="translate(100, 0)">
+    <ellipse cx="0" cy="8" rx="15" ry="6" fill="url(#batik-gold-accent)"/>
+    <path d="M-20 0 Q-10 12 0 12 Q10 12 20 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Bottom edge -->
+  <g transform="translate(100, 200)">
+    <ellipse cx="0" cy="-8" rx="15" ry="6" fill="url(#batik-gold-accent)"/>
+    <path d="M-20 0 Q-10 -12 0 -12 Q10 -12 20 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Left edge -->
+  <g transform="translate(0, 100)">
+    <ellipse cx="8" cy="0" rx="6" ry="15" fill="url(#batik-gold-accent)"/>
+    <path d="M0 -20 Q12 -10 12 0 Q12 10 0 20" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Right edge -->
+  <g transform="translate(200, 100)">
+    <ellipse cx="-8" cy="0" rx="6" ry="15" fill="url(#batik-gold-accent)"/>
+    <path d="M0 -20 Q-12 -10 -12 0 Q-12 10 0 20" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Scattered dots pattern -->
+  <circle cx="50" cy="50" r="2" fill="url(#batik-gold)" opacity="0.5"/>
+  <circle cx="150" cy="50" r="2" fill="url(#batik-gold)" opacity="0.5"/>
+  <circle cx="50" cy="150" r="2" fill="url(#batik-gold)" opacity="0.5"/>
+  <circle cx="150" cy="150" r="2" fill="url(#batik-gold)" opacity="0.5"/>
+
+  <!-- Small diamond accents -->
+  <path d="M50 100 L55 95 L60 100 L55 105 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
+  <path d="M140 100 L145 95 L150 100 L145 105 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
+  <path d="M100 50 L105 45 L110 50 L105 55 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
+  <path d="M100 140 L105 145 L110 150 L105 155 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
+</svg>

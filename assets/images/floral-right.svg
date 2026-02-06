@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 280" width="100" height="280">
+  <defs>
+    <!-- Poppy/marigold gradients -->
+    <radialGradient id="poppy-orange" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FFB347"/>
+      <stop offset="60%" style="stop-color:#D4793A"/>
+      <stop offset="100%" style="stop-color:#B85C2A"/>
+    </radialGradient>
+    <radialGradient id="poppy-coral" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FF8A80"/>
+      <stop offset="60%" style="stop-color:#E05A4E"/>
+      <stop offset="100%" style="stop-color:#C44038"/>
+    </radialGradient>
+    <radialGradient id="marigold-yellow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FFE066"/>
+      <stop offset="60%" style="stop-color:#F5A623"/>
+      <stop offset="100%" style="stop-color:#D4881A"/>
+    </radialGradient>
+    <!-- Grape gradient -->
+    <radialGradient id="grape-purple" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#8B6B9B"/>
+      <stop offset="60%" style="stop-color:#5E3A6B"/>
+      <stop offset="100%" style="stop-color:#3D2548"/>
+    </radialGradient>
+    <!-- Leaf gradient -->
+    <linearGradient id="leaf-green-r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5A8C4A"/>
+      <stop offset="50%" style="stop-color:#3D6B45"/>
+      <stop offset="100%" style="stop-color:#2D5235"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Stems -->
+  <path d="M50 280 Q55 240 45 200 Q40 160 55 120 Q65 80 50 40"
+        fill="none" stroke="#3D5A35" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 250 Q70 230 75 200"
+        fill="none" stroke="#3D5A35" stroke-width="2" stroke-linecap="round"/>
+  <path d="M48 200 Q30 180 25 150"
+        fill="none" stroke="#3D5A35" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 160 Q65 150 72 130"
+        fill="none" stroke="#3D5A35" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Large poppy/marigold 1 (top) -->
+  <g transform="translate(50, 38)">
+    <!-- Outer petals -->
+    <ellipse cx="0" cy="-12" rx="10" ry="14" fill="url(#poppy-orange)" opacity="0.9"/>
+    <ellipse cx="12" cy="-6" rx="10" ry="14" fill="url(#poppy-orange)" opacity="0.9" transform="rotate(60)"/>
+    <ellipse cx="10" cy="8" rx="10" ry="14" fill="url(#poppy-orange)" opacity="0.9" transform="rotate(120)"/>
+    <ellipse cx="-5" cy="12" rx="10" ry="14" fill="url(#poppy-orange)" opacity="0.9" transform="rotate(180)"/>
+    <ellipse cx="-12" cy="2" rx="10" ry="14" fill="url(#poppy-orange)" opacity="0.9" transform="rotate(240)"/>
+    <ellipse cx="-8" cy="-10" rx="10" ry="14" fill="url(#poppy-orange)" opacity="0.9" transform="rotate(300)"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="8" fill="#8B4513"/>
+    <circle cx="0" cy="0" r="5" fill="#654321"/>
+    <!-- Pollen dots -->
+    <circle cx="-2" cy="-2" r="1" fill="#FFD700"/>
+    <circle cx="2" cy="-1" r="1" fill="#FFD700"/>
+    <circle cx="0" cy="2" r="1" fill="#FFD700"/>
+  </g>
+
+  <!-- Marigold 2 (middle) -->
+  <g transform="translate(72, 100)">
+    <ellipse cx="0" cy="-8" rx="7" ry="10" fill="url(#marigold-yellow)" opacity="0.9"/>
+    <ellipse cx="8" cy="-4" rx="7" ry="10" fill="url(#marigold-yellow)" opacity="0.9" transform="rotate(50)"/>
+    <ellipse cx="8" cy="5" rx="7" ry="10" fill="url(#marigold-yellow)" opacity="0.9" transform="rotate(100)"/>
+    <ellipse cx="0" cy="9" rx="7" ry="10" fill="url(#marigold-yellow)" opacity="0.9" transform="rotate(150)"/>
+    <ellipse cx="-8" cy="4" rx="7" ry="10" fill="url(#marigold-yellow)" opacity="0.9" transform="rotate(210)"/>
+    <ellipse cx="-7" cy="-5" rx="7" ry="10" fill="url(#marigold-yellow)" opacity="0.9" transform="rotate(270)"/>
+    <circle cx="0" cy="0" r="6" fill="#B8860B"/>
+    <circle cx="0" cy="0" r="3" fill="#8B6914"/>
+  </g>
+
+  <!-- Coral flower 3 -->
+  <g transform="translate(28, 145)">
+    <ellipse cx="0" cy="-10" rx="8" ry="12" fill="url(#poppy-coral)" opacity="0.85"/>
+    <ellipse cx="10" cy="-3" rx="8" ry="12" fill="url(#poppy-coral)" opacity="0.85" transform="rotate(70)"/>
+    <ellipse cx="6" cy="8" rx="8" ry="12" fill="url(#poppy-coral)" opacity="0.85" transform="rotate(140)"/>
+    <ellipse cx="-6" cy="8" rx="8" ry="12" fill="url(#poppy-coral)" opacity="0.85" transform="rotate(210)"/>
+    <ellipse cx="-10" cy="-3" rx="8" ry="12" fill="url(#poppy-coral)" opacity="0.85" transform="rotate(290)"/>
+    <circle cx="0" cy="0" r="5" fill="#8B3030"/>
+  </g>
+
+  <!-- Grape cluster -->
+  <g transform="translate(70, 160)">
+    <circle cx="0" cy="0" r="7" fill="url(#grape-purple)"/>
+    <circle cx="8" cy="6" r="7" fill="url(#grape-purple)"/>
+    <circle cx="-6" cy="8" r="6.5" fill="url(#grape-purple)"/>
+    <circle cx="2" cy="14" r="6.5" fill="url(#grape-purple)"/>
+    <circle cx="10" cy="18" r="6" fill="url(#grape-purple)"/>
+    <circle cx="-4" cy="20" r="6" fill="url(#grape-purple)"/>
+    <circle cx="4" cy="26" r="5.5" fill="url(#grape-purple)"/>
+    <!-- Highlight dots -->
+    <circle cx="-2" cy="-2" r="2" fill="#A88BB0" opacity="0.6"/>
+    <circle cx="6" cy="4" r="1.5" fill="#A88BB0" opacity="0.5"/>
+  </g>
+
+  <!-- Leaves -->
+  <g transform="translate(20, 60) rotate(-30)">
+    <ellipse cx="0" cy="0" rx="18" ry="9" fill="url(#leaf-green-r)"/>
+    <path d="M-16 0 L16 0" stroke="#2D4A28" stroke-width="1" fill="none"/>
+    <path d="M-10 0 L-6 3 M-4 0 L0 3 M6 0 L10 3" stroke="#2D4A28" stroke-width="0.5" fill="none"/>
+  </g>
+
+  <g transform="translate(85, 75) rotate(25)">
+    <ellipse cx="0" cy="0" rx="16" ry="8" fill="url(#leaf-green-r)"/>
+    <path d="M-14 0 L14 0" stroke="#2D4A28" stroke-width="1" fill="none"/>
+  </g>
+
+  <g transform="translate(15, 120) rotate(-20)">
+    <ellipse cx="0" cy="0" rx="14" ry="7" fill="url(#leaf-green-r)"/>
+    <path d="M-12 0 L12 0" stroke="#2D4A28" stroke-width="0.8" fill="none"/>
+  </g>
+
+  <!-- Grape leaf -->
+  <g transform="translate(55, 200) rotate(15)">
+    <path d="M0 0 Q-15 -10 -20 0 Q-15 10 0 5 Q15 10 20 0 Q15 -10 0 0"
+          fill="url(#leaf-green-r)" stroke="#2D4A28" stroke-width="0.5"/>
+  </g>
+
+  <!-- Small accent buds -->
+  <g transform="translate(18, 190)">
+    <ellipse cx="0" cy="0" rx="6" ry="8" fill="url(#poppy-orange)" opacity="0.8"/>
+    <path d="M-4 6 Q0 2 4 6" fill="#4A7340"/>
+  </g>
+
+  <!-- Berry accents -->
+  <g transform="translate(88, 140)">
+    <circle cx="0" cy="0" r="4" fill="#E84B8A"/>
+    <circle cx="5" cy="5" r="3.5" fill="#E84B8A"/>
+  </g>
+</svg>

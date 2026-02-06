@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 280" width="100" height="280">
+  <defs>
+    <!-- Rose gradients -->
+    <radialGradient id="rose-red" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FF6B6B"/>
+      <stop offset="60%" style="stop-color:#E05A4E"/>
+      <stop offset="100%" style="stop-color:#B8423A"/>
+    </radialGradient>
+    <radialGradient id="rose-pink" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FF8FAB"/>
+      <stop offset="60%" style="stop-color:#E84B8A"/>
+      <stop offset="100%" style="stop-color:#C43D74"/>
+    </radialGradient>
+    <radialGradient id="rose-coral" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FFB088"/>
+      <stop offset="60%" style="stop-color:#E87B5A"/>
+      <stop offset="100%" style="stop-color:#C45D42"/>
+    </radialGradient>
+    <!-- Leaf gradient -->
+    <linearGradient id="leaf-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5A8C4A"/>
+      <stop offset="50%" style="stop-color:#3D6B45"/>
+      <stop offset="100%" style="stop-color:#2D5235"/>
+    </linearGradient>
+    <linearGradient id="leaf-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A7340"/>
+      <stop offset="100%" style="stop-color:#2D4A28"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Stems -->
+  <path d="M50 280 Q45 240 55 200 Q60 160 45 120 Q35 80 50 40"
+        fill="none" stroke="#3D5A35" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 250 Q30 230 25 200"
+        fill="none" stroke="#3D5A35" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 200 Q70 180 75 150"
+        fill="none" stroke="#3D5A35" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Large rose 1 (top) -->
+  <g transform="translate(45, 35)">
+    <!-- Outer petals -->
+    <ellipse cx="0" cy="0" rx="22" ry="20" fill="url(#rose-red)" opacity="0.9"/>
+    <ellipse cx="-8" cy="-5" rx="14" ry="12" fill="url(#rose-red)" transform="rotate(-30)"/>
+    <ellipse cx="8" cy="-5" rx="14" ry="12" fill="url(#rose-red)" transform="rotate(30)"/>
+    <!-- Inner petals -->
+    <ellipse cx="0" cy="-2" rx="12" ry="10" fill="#E05A4E"/>
+    <ellipse cx="-3" cy="-4" rx="8" ry="7" fill="#C44A3E" transform="rotate(-20)"/>
+    <ellipse cx="3" cy="-4" rx="8" ry="7" fill="#C44A3E" transform="rotate(20)"/>
+    <!-- Center -->
+    <circle cx="0" cy="-2" r="5" fill="#8B3030"/>
+    <circle cx="0" cy="-3" r="2" fill="#6B2020"/>
+  </g>
+
+  <!-- Rose 2 (middle-left) -->
+  <g transform="translate(28, 100)">
+    <ellipse cx="0" cy="0" rx="18" ry="16" fill="url(#rose-pink)" opacity="0.9"/>
+    <ellipse cx="-5" cy="-3" rx="11" ry="9" fill="url(#rose-pink)" transform="rotate(-25)"/>
+    <ellipse cx="5" cy="-3" rx="11" ry="9" fill="url(#rose-pink)" transform="rotate(25)"/>
+    <ellipse cx="0" cy="-2" rx="9" ry="7" fill="#D4407A"/>
+    <circle cx="0" cy="-2" r="4" fill="#A8325F"/>
+  </g>
+
+  <!-- Rose 3 (middle-right) -->
+  <g transform="translate(68, 150)">
+    <ellipse cx="0" cy="0" rx="16" ry="14" fill="url(#rose-coral)" opacity="0.85"/>
+    <ellipse cx="-4" cy="-2" rx="10" ry="8" fill="url(#rose-coral)" transform="rotate(-20)"/>
+    <ellipse cx="4" cy="-2" rx="10" ry="8" fill="url(#rose-coral)" transform="rotate(20)"/>
+    <ellipse cx="0" cy="-1" rx="7" ry="6" fill="#D06B4A"/>
+    <circle cx="0" cy="-1" r="3" fill="#A85438"/>
+  </g>
+
+  <!-- Rose bud (bottom) -->
+  <g transform="translate(30, 195)">
+    <ellipse cx="0" cy="0" rx="12" ry="14" fill="url(#rose-red)" opacity="0.8"/>
+    <ellipse cx="0" cy="-4" rx="8" ry="10" fill="#E05A4E"/>
+    <path d="M-6 8 Q0 2 6 8 Q0 12 -6 8" fill="#4A7340"/>
+  </g>
+
+  <!-- Leaves -->
+  <g transform="translate(70, 60) rotate(35)">
+    <ellipse cx="0" cy="0" rx="20" ry="10" fill="url(#leaf-green)"/>
+    <path d="M-18 0 L18 0" stroke="#2D4A28" stroke-width="1" fill="none"/>
+    <path d="M-12 0 L-8 -4 M-6 0 L-2 -3 M4 0 L8 -4 M10 0 L14 -3" stroke="#2D4A28" stroke-width="0.5" fill="none"/>
+  </g>
+
+  <g transform="translate(15, 140) rotate(-25)">
+    <ellipse cx="0" cy="0" rx="18" ry="9" fill="url(#leaf-green)"/>
+    <path d="M-16 0 L16 0" stroke="#2D4A28" stroke-width="1" fill="none"/>
+  </g>
+
+  <g transform="translate(55, 180) rotate(20)">
+    <ellipse cx="0" cy="0" rx="16" ry="8" fill="url(#leaf-dark)"/>
+    <path d="M-14 0 L14 0" stroke="#2D4A28" stroke-width="1" fill="none"/>
+  </g>
+
+  <g transform="translate(20, 230) rotate(-15)">
+    <ellipse cx="0" cy="0" rx="14" ry="7" fill="url(#leaf-green)"/>
+    <path d="M-12 0 L12 0" stroke="#2D4A28" stroke-width="0.8" fill="none"/>
+  </g>
+
+  <!-- Small accent flowers -->
+  <g transform="translate(80, 95)">
+    <circle cx="0" cy="0" r="6" fill="#FFD93D" opacity="0.9"/>
+    <circle cx="0" cy="0" r="3" fill="#E8B830"/>
+  </g>
+
+  <g transform="translate(12, 170)">
+    <circle cx="0" cy="0" r="5" fill="#FFD93D" opacity="0.85"/>
+    <circle cx="0" cy="0" r="2.5" fill="#E8B830"/>
+  </g>
+
+  <!-- Berry accents -->
+  <g transform="translate(85, 130)">
+    <circle cx="0" cy="0" r="4" fill="#5E3A6B"/>
+    <circle cx="6" cy="4" r="3.5" fill="#5E3A6B"/>
+    <circle cx="3" cy="8" r="3" fill="#5E3A6B"/>
+  </g>
+</svg>
