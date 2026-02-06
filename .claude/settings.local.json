@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n[1-1,1-2] Add .gitignore and LICENSE\n\n- Add standard .gitignore for web projects\n- Add MIT license\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n[1-3,1-4,1-5] Add HTML page structure\n\n- index.html: Hero, countdown, RSVP, dress code sections\n- events.html: Timeline skeleton for wedding events  \n- travel.html: Travel guide, venue, accommodation sections\n- Semantic HTML with ARIA labels\n- Mobile-first responsive structure\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n[1-6,1-7] Add CSS and JavaScript foundation\n\nCSS \\(style.css\\):\n- Complete color system with CSS variables\n- Event theme palettes \\(Heritage, Glamour, Carnival, Royal\\)\n- Typography system with Google Fonts\n- Base layout and content panel styles\n- Navigation with mobile hamburger menu\n- Hero section with countdown styling\n- Footer styles\n- Accessibility \\(skip link, focus states, reduced motion\\)\n\nJS \\(main.js\\):\n- IIFE structure for encapsulation\n- Navigation toggle for mobile\n- Countdown timer to wedding date\n- RSVP form handler skeleton\n- Keyboard event handling\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n[1-8,1-9] Add assets directory, README, and GitHub Actions\n\n- assets/images/.gitkeep for SVG assets \\(Phase 8\\)\n- README.md with project overview and setup instructions\n- .github/workflows/deploy.yml for GitHub Pages deployment\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n[1-0] Add project documentation and planning files\n\n- PLAN.md: Complete 13-phase development plan\n- PROGRESS.md: Phase completion tracker\n- RESTORE_POINTS.md: Git rollback instructions\n- wedding-website-prd.md: Product requirements document\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)"
+    ]
+  }
+}
