@@ -17,20 +17,20 @@ git reset --hard <commit-hash>
 ## Phase 1: Project Setup & Base Structure - Restore Point
 
 ### Git Commit Hash
-`pending` - Phase not yet completed
+`5b7a497` - [1-0] Add project documentation and planning files
 
 ### Rollback Instructions
 ```bash
-git reset --hard <hash>
+git reset --hard 5b7a497
 ```
 
 ### Files State at This Point
-- index.html: Basic HTML5 boilerplate with semantic structure
-- events.html: Skeleton structure
-- travel.html: Skeleton structure
-- css/style.css: CSS reset, variables, base styles
-- js/main.js: Empty IIFE structure
-- README.md: Skeleton documentation
+- index.html: Complete semantic structure with hero, RSVP, dress code sections
+- events.html: Skeleton with day headers and timeline structure
+- travel.html: Skeleton with route cards, venue, accommodation sections
+- css/style.css: Complete CSS variables, color system, base styles, nav, footer
+- js/main.js: IIFE with navigation, countdown, RSVP handlers
+- README.md: Project documentation with setup instructions
 
 ---
 
@@ -132,7 +132,7 @@ git reset --hard <hash>
 
 | Phase | Commit Hash | Description |
 |-------|-------------|-------------|
-| 1 | pending | Project setup |
+| 1 | 5b7a497 | Project setup |
 | 2 | pending | Layout & nav |
 | 3 | pending | Hero section |
 | 4 | pending | RSVP form |

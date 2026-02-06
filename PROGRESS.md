@@ -1,8 +1,8 @@
 # Prerna & Arpit Wedding Website - Progress Tracker
 
 ## Current Status
-**Active Phase**: Awaiting Plan Approval
-**Overall Progress**: 0/13 phases complete
+**Active Phase**: Phase 2: Global Layout & Navigation
+**Overall Progress**: 1/13 phases complete
 **Blockers**: None
 
 ---
@@ -10,13 +10,18 @@
 ## Phase History
 
 ### Phase 1: Project Setup & Base Structure
-- **Status**: Not Started
-- **Completed**: -
-- **Files Created**: -
-- **Commits Made**: -
-- **Assumptions Made**: -
-- **Deviations from Plan**: -
-- **Notes**: -
+- **Status**: Complete
+- **Completed**: Feb 6, 2026
+- **Files Created**: .gitignore, LICENSE, index.html, events.html, travel.html, css/style.css, js/main.js, README.md, assets/images/.gitkeep, .github/workflows/deploy.yml, PLAN.md, PROGRESS.md, RESTORE_POINTS.md
+- **Commits Made**:
+  - `cfbbc26` [1-1,1-2] Add .gitignore and LICENSE
+  - `b01ce28` [1-3,1-4,1-5] Add HTML page structure
+  - `f0ad9ce` [1-6,1-7] Add CSS and JavaScript foundation
+  - `27ed917` [1-8,1-9] Add assets directory, README, and GitHub Actions
+  - `5b7a497` [1-0] Add project documentation and planning files
+- **Assumptions Made**: None
+- **Deviations from Plan**: None
+- **Notes**: All base structure in place. Pages load without errors. CSS variables and JS IIFE structure ready.
 
 ### Phase 2: Global Layout & Navigation
 - **Status**: Not Started
@@ -112,10 +117,10 @@
 
 | File | Size | Running Total |
 |------|------|---------------|
-| index.html | - | - |
-| events.html | - | - |
-| travel.html | - | - |
-| css/style.css | - | - |
-| js/main.js | - | - |
-| assets/images/ | - | - |
-| **Total** | - | /1MB |
+| index.html | 5.9 KB | 5.9 KB |
+| events.html | 3.3 KB | 9.2 KB |
+| travel.html | 4.1 KB | 13.3 KB |
+| css/style.css | 12.9 KB | 26.2 KB |
+| js/main.js | 6.8 KB | 33.0 KB |
+| assets/images/ | ~0 KB | 33.0 KB |
+| **Total** | **33.0 KB** | /1MB (3.3%)
