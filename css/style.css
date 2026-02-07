@@ -1913,7 +1913,15 @@ ul {
    Travel Page - Routes
    ================================ */
 .travel-routes {
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-xl) 0;
+}
+
+.travel-routes .content-panel {
+  width: auto;
+  max-width: none;
+  margin-left: 1in;
+  margin-right: 1in;
+  box-sizing: border-box;
 }
 
 .travel-panel {
@@ -2553,6 +2561,14 @@ section:not(:last-of-type)::after {
 
   .rsvp-panel {
     padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  /* Travel routes mobile */
+  .travel-routes .content-panel {
+    width: auto;
+    max-width: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .form-input,
