@@ -10,7 +10,15 @@
       "Bash(git commit:*)",
       "Bash(wc:*)",
       "Bash(find:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(gh run list:*)",
+      "Bash(python -m http.server:*)",
+      "Bash(start \"\" \"C:\\\\Users\\\\conta\\\\Documents\\\\Work\\\\WeddingWebsiteFINALtheme\\\\assets\\\\images\\\\batik-pattern.svg\")",
+      "Bash(start \"\" \"http://localhost:8000\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\conta\\\\Documents\\\\Work\\\\WeddingWebsiteFINALtheme\\\\index.html\")",
+      "Bash(copy \"C:\\\\Users\\\\conta\\\\Documents\\\\Work\\\\WeddingWebsiteFINALtheme\\\\background image.jpg\" \"C:\\\\Users\\\\conta\\\\Documents\\\\Work\\\\WeddingWebsiteFINALtheme\\\\assets\\\\images\\\\background-pattern.jpg\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\conta\\\\Documents\\\\Work\\\\WeddingWebsiteFINALtheme\\\\travel.html\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\conta\\\\Documents\\\\Work\\\\WeddingWebsiteFINALtheme\\\\events.html\")"
     ]
   }
 }
