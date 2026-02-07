@@ -574,10 +574,8 @@ ul {
    ================================ */
 .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--nav-height) + var(--spacing-xl)) var(--spacing-md) var(--spacing-xl);
+  display: block;
+  padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-xl);
   /* Slight darkening overlay over batik pattern */
   background: linear-gradient(
     180deg,
@@ -590,10 +588,11 @@ ul {
 .hero .content-panel {
   text-align: center;
   padding: var(--spacing-xxl) var(--spacing-lg);
-  width: calc(100% - 2in);
+  width: auto;
   max-width: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 1in;
+  margin-right: 1in;
+  box-sizing: border-box;
 }
 
 /* Extra decorative frame for hero panel */
@@ -2443,8 +2442,10 @@ section:not(:last-of-type)::after {
 
   /* Hero mobile adjustments */
   .hero .content-panel {
-    width: calc(100% - 2in);
+    width: auto;
     max-width: none;
+    margin-left: 1in;
+    margin-right: 1in;
   }
 
   .hero-panel {
