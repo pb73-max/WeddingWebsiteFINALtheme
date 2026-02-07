@@ -116,9 +116,9 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Mughal floral tile pattern SVG background */
-  background-image: url('../assets/images/batik-pattern.svg');
-  background-size: 200px 240px;
+  /* Mughal floral tile pattern background */
+  background-image: url('../assets/images/background-pattern.jpg');
+  background-size: auto;
   background-position: 0 0;
   background-repeat: repeat;
   /* Mobile tap highlight */
