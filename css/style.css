@@ -819,6 +819,18 @@ ul {
   opacity: 0.9;
 }
 
+.venue-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--metallic-gold);
+  text-underline-offset: 3px;
+  transition: color var(--transition-speed) var(--transition-ease);
+}
+
+.venue-link:hover {
+  color: var(--metallic-gold);
+}
+
 /* Countdown Timer */
 .countdown {
   display: flex;
