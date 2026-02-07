@@ -1521,24 +1521,13 @@ ul {
   margin-left: 1in;
   margin-right: 1in;
   position: relative;
-  padding-left: 40px;
+  padding-left: 0;
   box-sizing: border-box;
 }
 
-/* Vertical timeline line */
+/* Vertical timeline line - hidden */
 .timeline-line {
-  position: absolute;
-  left: 15px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(
-    180deg,
-    var(--metallic-gold) 0%,
-    var(--rich-gold) 50%,
-    var(--metallic-gold) 100%
-  );
-  border-radius: 2px;
+  display: none;
 }
 
 /* Day Header */
@@ -1557,21 +1546,13 @@ ul {
   border: 2px solid var(--metallic-gold);
   border-radius: 8px;
   margin-bottom: var(--spacing-lg);
-  margin-left: var(--spacing-lg);
+  margin-left: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Day marker - hidden */
 .day-marker {
-  position: absolute;
-  left: -48px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background: var(--rich-gold);
-  border: 3px solid var(--light-gold);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.3);
+  display: none;
 }
 
 .day-title {
@@ -1594,7 +1575,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-  padding-left: var(--spacing-lg);
+  padding-left: 0;
 }
 
 /* Event Card Base */
@@ -1612,21 +1593,10 @@ ul {
 }
 
 /* Time marker on timeline */
-.event-time-marker {
-  position: absolute;
-  left: -40px;
-  top: 24px;
-  width: 16px;
-  height: 16px;
-}
-
+/* Event time marker - hidden */
+.event-time-marker,
 .time-dot {
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: var(--cream);
-  border: 2px solid var(--metallic-gold);
-  border-radius: 50%;
+  display: none;
 }
 
 /* Event Content */
@@ -2659,7 +2629,7 @@ section:not(:last-of-type)::after {
   }
 
   .timeline-events {
-    padding-left: var(--spacing-md);
+    padding-left: 0;
     gap: var(--spacing-md);
   }
 
