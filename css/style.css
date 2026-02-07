@@ -590,6 +590,10 @@ ul {
 .hero .content-panel {
   text-align: center;
   padding: var(--spacing-xxl) var(--spacing-lg);
+  width: calc(100% - 2in);
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Extra decorative frame for hero panel */
@@ -2438,6 +2442,11 @@ section:not(:last-of-type)::after {
   .corner-bottom-right { bottom: 12px; right: 12px; }
 
   /* Hero mobile adjustments */
+  .hero .content-panel {
+    width: calc(100% - 2in);
+    max-width: none;
+  }
+
   .hero-panel {
     padding: var(--spacing-xl) var(--spacing-md);
   }
