@@ -781,6 +781,10 @@ ul {
 /* Hero Text */
 .hero-text {
   margin-bottom: var(--spacing-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ampersand {
