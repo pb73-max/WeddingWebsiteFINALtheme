@@ -29,6 +29,7 @@
   --batik-blue: #8B7CC8;
   --leaf-green: #3D6B45;
   --grape-purple: #5E3A6B;
+  --light-pink: #FFB5C0;
 
   /* Functional Colors */
   --bg-primary: var(--emerald-green);
@@ -293,7 +294,7 @@ ul {
 .content-panel {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  background: var(--emerald-green);
+  background: var(--light-pink);
   padding: var(--spacing-xl) var(--spacing-lg);
   position: relative;
   /* Layered gold border effect */
@@ -1542,7 +1543,7 @@ ul {
 .day-header {
   position: relative;
   padding: var(--spacing-lg);
-  background: linear-gradient(135deg, var(--emerald-green) 0%, var(--dark-green) 100%);
+  background: var(--light-pink);
   border: 2px solid var(--metallic-gold);
   border-radius: 8px;
   margin-bottom: var(--spacing-lg);
