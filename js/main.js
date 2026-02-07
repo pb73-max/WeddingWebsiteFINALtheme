@@ -30,8 +30,6 @@
     navMenu: null,
     countdownDays: null,
     countdownHours: null,
-    countdownMinutes: null,
-    countdownSeconds: null,
     rsvpForm: null,
     rsvpSuccess: null,
     rsvpError: null
@@ -84,13 +82,11 @@
   function initCountdown() {
     elements.countdownDays = document.getElementById('countdown-days');
     elements.countdownHours = document.getElementById('countdown-hours');
-    elements.countdownMinutes = document.getElementById('countdown-minutes');
-    elements.countdownSeconds = document.getElementById('countdown-seconds');
 
     // Only init if countdown elements exist (hero page)
     if (elements.countdownDays) {
       updateCountdown();
-      state.countdownInterval = setInterval(updateCountdown, 1000);
+      state.countdownInterval = setInterval(updateCountdown, 60000); // Update every minute
     }
   }
 
@@ -107,14 +103,10 @@
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     // Animate number changes
     updateCountdownUnit(elements.countdownDays, padNumber(days));
     updateCountdownUnit(elements.countdownHours, padNumber(hours));
-    updateCountdownUnit(elements.countdownMinutes, padNumber(minutes));
-    updateCountdownUnit(elements.countdownSeconds, padNumber(seconds));
   }
 
   function updateCountdownUnit(element, newValue) {
