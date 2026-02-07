@@ -1,222 +1,200 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
   <defs>
-    <!-- Pink/Coral base gradient -->
-    <linearGradient id="pink-base" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#E8A0B0"/>
-      <stop offset="50%" style="stop-color:#F0B0C0"/>
-      <stop offset="100%" style="stop-color:#E890A0"/>
+    <!-- Teal/sage green gradient for arch fill -->
+    <linearGradient id="teal-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7BA99C"/>
+      <stop offset="30%" style="stop-color:#6B9B8A"/>
+      <stop offset="70%" style="stop-color:#8BB5A5"/>
+      <stop offset="100%" style="stop-color:#5C8B78"/>
     </linearGradient>
 
-    <!-- Blue-purple paisley gradient -->
-    <linearGradient id="blue-purple" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6B5CA8"/>
-      <stop offset="50%" style="stop-color:#8B7CC8"/>
-      <stop offset="100%" style="stop-color:#5B4C98"/>
+    <!-- Gold border gradient -->
+    <linearGradient id="gold-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8B830"/>
+      <stop offset="50%" style="stop-color:#D4A020"/>
+      <stop offset="100%" style="stop-color:#C89010"/>
     </linearGradient>
 
-    <!-- Gold accent -->
-    <linearGradient id="gold-accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#D4A843"/>
-      <stop offset="50%" style="stop-color:#E8C860"/>
-      <stop offset="100%" style="stop-color:#C49833"/>
-    </linearGradient>
-
-    <!-- Coral flower gradient -->
-    <radialGradient id="coral-flower" cx="50%" cy="30%" r="70%">
-      <stop offset="0%" style="stop-color:#FF8080"/>
-      <stop offset="70%" style="stop-color:#E85A5A"/>
-      <stop offset="100%" style="stop-color:#C84040"/>
+    <!-- Pink flower gradient -->
+    <radialGradient id="pink-flower" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#F5A0A0"/>
+      <stop offset="40%" style="stop-color:#E88080"/>
+      <stop offset="80%" style="stop-color:#D06868"/>
+      <stop offset="100%" style="stop-color:#B85858"/>
     </radialGradient>
 
-    <!-- Teal leaf gradient -->
-    <linearGradient id="teal-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4A8B7C"/>
-      <stop offset="100%" style="stop-color:#2A6B5C"/>
-    </linearGradient>
+    <!-- Darker pink for inner petals -->
+    <radialGradient id="pink-dark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D07070"/>
+      <stop offset="100%" style="stop-color:#A04848"/>
+    </radialGradient>
+
+    <!-- Scalloped arch clip path -->
+    <clipPath id="arch-clip">
+      <path d="M0 120 Q0 60 50 30 Q75 15 100 30 Q150 60 150 120 Q150 180 100 210 Q75 225 50 210 Q0 180 0 120 Z"/>
+    </clipPath>
   </defs>
 
-  <!-- Pink background -->
-  <rect width="400" height="400" fill="url(#pink-base)"/>
+  <!-- Background base -->
+  <rect width="200" height="240" fill="#5C8B78"/>
 
-  <!-- Large paisley shape - top left -->
-  <g transform="translate(30, 30)">
-    <path d="M80 0 Q140 20 140 80 Q140 160 60 180 Q-20 160 -20 80 Q-20 20 40 0 Q60 -10 80 0 Z"
-          fill="url(#blue-purple)" opacity="0.9"/>
-    <!-- Inner paisley detail -->
-    <path d="M70 20 Q110 35 110 75 Q110 130 50 145 Q0 130 0 75 Q0 35 40 20 Q55 12 70 20 Z"
-          fill="none" stroke="#E8C860" stroke-width="2" opacity="0.8"/>
-    <!-- Paisley curl -->
-    <path d="M60 40 Q90 50 85 80 Q80 110 50 120"
-          fill="none" stroke="#F0D080" stroke-width="3" stroke-linecap="round"/>
-    <!-- Gold dots inside paisley -->
-    <circle cx="50" cy="60" r="4" fill="url(#gold-accent)"/>
-    <circle cx="65" cy="75" r="3" fill="url(#gold-accent)"/>
-    <circle cx="45" cy="85" r="3" fill="url(#gold-accent)"/>
-    <circle cx="60" cy="100" r="2.5" fill="url(#gold-accent)"/>
-    <circle cx="40" cy="70" r="2" fill="#F0D080"/>
-    <circle cx="55" cy="55" r="2" fill="#F0D080"/>
-  </g>
+  <!-- Row 1 - Full arch at center -->
+  <g transform="translate(25, -30)">
+    <!-- Arch background with gold border -->
+    <path d="M0 120
+             Q0 50 75 20
+             Q150 50 150 120
+             L150 240 L0 240 Z"
+          fill="url(#teal-fill)" stroke="url(#gold-border)" stroke-width="4"/>
 
-  <!-- Large paisley shape - bottom right -->
-  <g transform="translate(250, 220) rotate(180)">
-    <path d="M80 0 Q140 20 140 80 Q140 160 60 180 Q-20 160 -20 80 Q-20 20 40 0 Q60 -10 80 0 Z"
-          fill="url(#blue-purple)" opacity="0.9"/>
-    <path d="M70 20 Q110 35 110 75 Q110 130 50 145 Q0 130 0 75 Q0 35 40 20 Q55 12 70 20 Z"
-          fill="none" stroke="#E8C860" stroke-width="2" opacity="0.8"/>
-    <path d="M60 40 Q90 50 85 80 Q80 110 50 120"
-          fill="none" stroke="#F0D080" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="50" cy="60" r="4" fill="url(#gold-accent)"/>
-    <circle cx="65" cy="75" r="3" fill="url(#gold-accent)"/>
-    <circle cx="45" cy="85" r="3" fill="url(#gold-accent)"/>
-    <circle cx="60" cy="100" r="2.5" fill="url(#gold-accent)"/>
-  </g>
+    <!-- Scalloped top edge -->
+    <path d="M0 120 Q0 50 75 20 Q150 50 150 120"
+          fill="none" stroke="url(#gold-border)" stroke-width="5"/>
 
-  <!-- Medium paisley - top right -->
-  <g transform="translate(300, 60) rotate(45)">
-    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Q40 -5 50 0 Z"
-          fill="url(#blue-purple)" opacity="0.85"/>
-    <path d="M40 15 Q65 25 65 45 Q65 80 35 90 Q5 80 5 45 Q5 25 25 15 Z"
-          fill="none" stroke="#E8C860" stroke-width="1.5"/>
-    <circle cx="35" cy="45" r="3" fill="url(#gold-accent)"/>
-    <circle cx="40" cy="60" r="2.5" fill="url(#gold-accent)"/>
-  </g>
+    <!-- Pink Peony Flower -->
+    <g transform="translate(75, 95)">
+      <!-- Outer petals layer -->
+      <ellipse cx="-28" cy="5" rx="18" ry="25" fill="url(#pink-flower)" transform="rotate(-30)"/>
+      <ellipse cx="28" cy="5" rx="18" ry="25" fill="url(#pink-flower)" transform="rotate(30)"/>
+      <ellipse cx="-20" cy="-15" rx="16" ry="22" fill="url(#pink-flower)" transform="rotate(-15)"/>
+      <ellipse cx="20" cy="-15" rx="16" ry="22" fill="url(#pink-flower)" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-25" rx="15" ry="20" fill="url(#pink-flower)"/>
 
-  <!-- Medium paisley - bottom left -->
-  <g transform="translate(50, 280) rotate(-30)">
-    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Q40 -5 50 0 Z"
-          fill="url(#blue-purple)" opacity="0.85"/>
-    <path d="M40 15 Q65 25 65 45 Q65 80 35 90 Q5 80 5 45 Q5 25 25 15 Z"
-          fill="none" stroke="#E8C860" stroke-width="1.5"/>
-    <circle cx="35" cy="45" r="3" fill="url(#gold-accent)"/>
-    <circle cx="40" cy="60" r="2.5" fill="url(#gold-accent)"/>
-  </g>
+      <!-- Middle petals layer -->
+      <ellipse cx="-18" cy="0" rx="14" ry="20" fill="#E07878" transform="rotate(-25)"/>
+      <ellipse cx="18" cy="0" rx="14" ry="20" fill="#E07878" transform="rotate(25)"/>
+      <ellipse cx="-12" cy="-12" rx="12" ry="18" fill="#E07878" transform="rotate(-10)"/>
+      <ellipse cx="12" cy="-12" rx="12" ry="18" fill="#E07878" transform="rotate(10)"/>
+      <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#E07878"/>
 
-  <!-- Coral/Red flowers -->
-  <g transform="translate(200, 100)">
-    <!-- Flower petals -->
-    <ellipse cx="0" cy="-15" rx="12" ry="18" fill="url(#coral-flower)"/>
-    <ellipse cx="14" cy="-5" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(72)"/>
-    <ellipse cx="9" cy="12" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(144)"/>
-    <ellipse cx="-9" cy="12" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(216)"/>
-    <ellipse cx="-14" cy="-5" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(288)"/>
-    <!-- Flower center -->
-    <circle cx="0" cy="0" r="8" fill="#C84040"/>
-    <circle cx="0" cy="0" r="4" fill="url(#gold-accent)"/>
-  </g>
+      <!-- Inner petals -->
+      <ellipse cx="-10" cy="-5" rx="10" ry="14" fill="url(#pink-dark)" transform="rotate(-15)"/>
+      <ellipse cx="10" cy="-5" rx="10" ry="14" fill="url(#pink-dark)" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-12" rx="9" ry="12" fill="url(#pink-dark)"/>
 
-  <g transform="translate(320, 320)">
-    <ellipse cx="0" cy="-12" rx="10" ry="15" fill="url(#coral-flower)"/>
-    <ellipse cx="11" cy="-4" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(72)"/>
-    <ellipse cx="7" cy="10" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(144)"/>
-    <ellipse cx="-7" cy="10" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(216)"/>
-    <ellipse cx="-11" cy="-4" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(288)"/>
-    <circle cx="0" cy="0" r="6" fill="#C84040"/>
-    <circle cx="0" cy="0" r="3" fill="url(#gold-accent)"/>
-  </g>
+      <!-- Center details -->
+      <ellipse cx="-5" cy="-2" rx="6" ry="9" fill="#A05050"/>
+      <ellipse cx="5" cy="-2" rx="6" ry="9" fill="#A05050"/>
+      <ellipse cx="0" cy="-6" rx="5" ry="7" fill="#904545"/>
 
-  <g transform="translate(80, 180)">
-    <ellipse cx="0" cy="-10" rx="8" ry="12" fill="url(#coral-flower)"/>
-    <ellipse cx="9" cy="-3" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(72)"/>
-    <ellipse cx="6" cy="8" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(144)"/>
-    <ellipse cx="-6" cy="8" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(216)"/>
-    <ellipse cx="-9" cy="-3" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(288)"/>
-    <circle cx="0" cy="0" r="5" fill="#C84040"/>
-    <circle cx="0" cy="0" r="2.5" fill="url(#gold-accent)"/>
+      <!-- Petal line details -->
+      <g stroke="#B06060" stroke-width="0.5" fill="none" opacity="0.6">
+        <path d="M-25 10 Q-20 -5 -15 -20"/>
+        <path d="M25 10 Q20 -5 15 -20"/>
+        <path d="M-18 15 Q-12 0 -8 -15"/>
+        <path d="M18 15 Q12 0 8 -15"/>
+        <path d="M0 -5 L0 -25"/>
+      </g>
+    </g>
+
+    <!-- Stem -->
+    <path d="M75 140 L75 200" stroke="#4A7A68" stroke-width="4" fill="none"/>
+    <path d="M75 140 L75 200" stroke="#3A6A58" stroke-width="2" fill="none"/>
+
+    <!-- Stem stripes -->
+    <g stroke="#5A8A78" stroke-width="1" opacity="0.7">
+      <path d="M73 145 L77 150"/>
+      <path d="M77 155 L73 160"/>
+      <path d="M73 165 L77 170"/>
+      <path d="M77 175 L73 180"/>
+      <path d="M73 185 L77 190"/>
+    </g>
+
+    <!-- Leaves at top of stem -->
+    <g transform="translate(75, 140)">
+      <ellipse cx="-8" cy="-5" rx="4" ry="10" fill="#5A9080" transform="rotate(-30)"/>
+      <ellipse cx="8" cy="-5" rx="4" ry="10" fill="#5A9080" transform="rotate(30)"/>
+      <path d="M-8 -10 L-6 -2" stroke="#3A6A58" stroke-width="0.5"/>
+      <path d="M8 -10 L6 -2" stroke="#3A6A58" stroke-width="0.5"/>
+    </g>
+
+    <!-- Small leaf bud at bottom -->
+    <g transform="translate(75, 205)">
+      <ellipse cx="0" cy="8" rx="5" ry="12" fill="#6A9A88"/>
+      <ellipse cx="-4" cy="5" rx="3" ry="8" fill="#5A8A78" transform="rotate(-15)"/>
+      <ellipse cx="4" cy="5" rx="3" ry="8" fill="#5A8A78" transform="rotate(15)"/>
+      <path d="M0 2 L0 18" stroke="#4A7A68" stroke-width="0.5"/>
+    </g>
   </g>
 
-  <!-- Teal/Green leaves -->
-  <g transform="translate(180, 140) rotate(30)">
-    <ellipse cx="0" cy="0" rx="8" ry="20" fill="url(#teal-leaf)"/>
-    <path d="M0 -18 L0 18" stroke="#1A5040" stroke-width="1"/>
-  </g>
-  <g transform="translate(220, 130) rotate(-20)">
-    <ellipse cx="0" cy="0" rx="7" ry="18" fill="url(#teal-leaf)"/>
-    <path d="M0 -16 L0 16" stroke="#1A5040" stroke-width="1"/>
-  </g>
-  <g transform="translate(160, 120) rotate(50)">
-    <ellipse cx="0" cy="0" rx="6" ry="15" fill="url(#teal-leaf)"/>
+  <!-- Row 2 - Left partial arch -->
+  <g transform="translate(-75, 90)">
+    <path d="M0 120 Q0 50 75 20 Q150 50 150 120 L150 240 L0 240 Z"
+          fill="url(#teal-fill)" stroke="url(#gold-border)" stroke-width="4"/>
+    <path d="M0 120 Q0 50 75 20 Q150 50 150 120"
+          fill="none" stroke="url(#gold-border)" stroke-width="5"/>
+
+    <!-- Flower -->
+    <g transform="translate(75, 95)">
+      <ellipse cx="-28" cy="5" rx="18" ry="25" fill="url(#pink-flower)" transform="rotate(-30)"/>
+      <ellipse cx="28" cy="5" rx="18" ry="25" fill="url(#pink-flower)" transform="rotate(30)"/>
+      <ellipse cx="-20" cy="-15" rx="16" ry="22" fill="url(#pink-flower)" transform="rotate(-15)"/>
+      <ellipse cx="20" cy="-15" rx="16" ry="22" fill="url(#pink-flower)" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-25" rx="15" ry="20" fill="url(#pink-flower)"/>
+      <ellipse cx="-18" cy="0" rx="14" ry="20" fill="#E07878" transform="rotate(-25)"/>
+      <ellipse cx="18" cy="0" rx="14" ry="20" fill="#E07878" transform="rotate(25)"/>
+      <ellipse cx="-12" cy="-12" rx="12" ry="18" fill="#E07878" transform="rotate(-10)"/>
+      <ellipse cx="12" cy="-12" rx="12" ry="18" fill="#E07878" transform="rotate(10)"/>
+      <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#E07878"/>
+      <ellipse cx="-10" cy="-5" rx="10" ry="14" fill="url(#pink-dark)" transform="rotate(-15)"/>
+      <ellipse cx="10" cy="-5" rx="10" ry="14" fill="url(#pink-dark)" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-12" rx="9" ry="12" fill="url(#pink-dark)"/>
+      <ellipse cx="-5" cy="-2" rx="6" ry="9" fill="#A05050"/>
+      <ellipse cx="5" cy="-2" rx="6" ry="9" fill="#A05050"/>
+      <ellipse cx="0" cy="-6" rx="5" ry="7" fill="#904545"/>
+    </g>
+    <path d="M75 140 L75 200" stroke="#4A7A68" stroke-width="4"/>
+    <path d="M75 140 L75 200" stroke="#3A6A58" stroke-width="2"/>
+    <g transform="translate(75, 140)">
+      <ellipse cx="-8" cy="-5" rx="4" ry="10" fill="#5A9080" transform="rotate(-30)"/>
+      <ellipse cx="8" cy="-5" rx="4" ry="10" fill="#5A9080" transform="rotate(30)"/>
+    </g>
+    <g transform="translate(75, 205)">
+      <ellipse cx="0" cy="8" rx="5" ry="12" fill="#6A9A88"/>
+      <ellipse cx="-4" cy="5" rx="3" ry="8" fill="#5A8A78" transform="rotate(-15)"/>
+      <ellipse cx="4" cy="5" rx="3" ry="8" fill="#5A8A78" transform="rotate(15)"/>
+    </g>
   </g>
 
-  <g transform="translate(300, 350) rotate(-40)">
-    <ellipse cx="0" cy="0" rx="7" ry="18" fill="url(#teal-leaf)"/>
-    <path d="M0 -16 L0 16" stroke="#1A5040" stroke-width="1"/>
-  </g>
-  <g transform="translate(340, 340) rotate(20)">
-    <ellipse cx="0" cy="0" rx="6" ry="15" fill="url(#teal-leaf)"/>
+  <!-- Row 2 - Right partial arch -->
+  <g transform="translate(125, 90)">
+    <path d="M0 120 Q0 50 75 20 Q150 50 150 120 L150 240 L0 240 Z"
+          fill="url(#teal-fill)" stroke="url(#gold-border)" stroke-width="4"/>
+    <path d="M0 120 Q0 50 75 20 Q150 50 150 120"
+          fill="none" stroke="url(#gold-border)" stroke-width="5"/>
+
+    <!-- Flower -->
+    <g transform="translate(75, 95)">
+      <ellipse cx="-28" cy="5" rx="18" ry="25" fill="url(#pink-flower)" transform="rotate(-30)"/>
+      <ellipse cx="28" cy="5" rx="18" ry="25" fill="url(#pink-flower)" transform="rotate(30)"/>
+      <ellipse cx="-20" cy="-15" rx="16" ry="22" fill="url(#pink-flower)" transform="rotate(-15)"/>
+      <ellipse cx="20" cy="-15" rx="16" ry="22" fill="url(#pink-flower)" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-25" rx="15" ry="20" fill="url(#pink-flower)"/>
+      <ellipse cx="-18" cy="0" rx="14" ry="20" fill="#E07878" transform="rotate(-25)"/>
+      <ellipse cx="18" cy="0" rx="14" ry="20" fill="#E07878" transform="rotate(25)"/>
+      <ellipse cx="-12" cy="-12" rx="12" ry="18" fill="#E07878" transform="rotate(-10)"/>
+      <ellipse cx="12" cy="-12" rx="12" ry="18" fill="#E07878" transform="rotate(10)"/>
+      <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#E07878"/>
+      <ellipse cx="-10" cy="-5" rx="10" ry="14" fill="url(#pink-dark)" transform="rotate(-15)"/>
+      <ellipse cx="10" cy="-5" rx="10" ry="14" fill="url(#pink-dark)" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-12" rx="9" ry="12" fill="url(#pink-dark)"/>
+      <ellipse cx="-5" cy="-2" rx="6" ry="9" fill="#A05050"/>
+      <ellipse cx="5" cy="-2" rx="6" ry="9" fill="#A05050"/>
+      <ellipse cx="0" cy="-6" rx="5" ry="7" fill="#904545"/>
+    </g>
+    <path d="M75 140 L75 200" stroke="#4A7A68" stroke-width="4"/>
+    <path d="M75 140 L75 200" stroke="#3A6A58" stroke-width="2"/>
+    <g transform="translate(75, 140)">
+      <ellipse cx="-8" cy="-5" rx="4" ry="10" fill="#5A9080" transform="rotate(-30)"/>
+      <ellipse cx="8" cy="-5" rx="4" ry="10" fill="#5A9080" transform="rotate(30)"/>
+    </g>
+    <g transform="translate(75, 205)">
+      <ellipse cx="0" cy="8" rx="5" ry="12" fill="#6A9A88"/>
+      <ellipse cx="-4" cy="5" rx="3" ry="8" fill="#5A8A78" transform="rotate(-15)"/>
+      <ellipse cx="4" cy="5" rx="3" ry="8" fill="#5A8A78" transform="rotate(15)"/>
+    </g>
   </g>
 
-  <!-- Gold dotted swirls and accents -->
-  <!-- Swirl pattern 1 -->
-  <g fill="url(#gold-accent)">
-    <circle cx="170" cy="50" r="3"/>
-    <circle cx="180" cy="45" r="2.5"/>
-    <circle cx="190" cy="42" r="2"/>
-    <circle cx="200" cy="40" r="1.8"/>
-    <circle cx="210" cy="40" r="1.5"/>
-  </g>
-
-  <!-- Swirl pattern 2 -->
-  <g fill="url(#gold-accent)">
-    <circle cx="280" cy="180" r="3"/>
-    <circle cx="290" cy="175" r="2.5"/>
-    <circle cx="300" cy="172" r="2"/>
-    <circle cx="310" cy="170" r="1.8"/>
-  </g>
-
-  <!-- Scattered gold dots -->
-  <g fill="#E8C860" opacity="0.9">
-    <circle cx="150" cy="200" r="2"/>
-    <circle cx="160" cy="210" r="1.5"/>
-    <circle cx="145" cy="220" r="2"/>
-    <circle cx="250" cy="150" r="2"/>
-    <circle cx="260" cy="140" r="1.5"/>
-    <circle cx="240" cy="145" r="1.8"/>
-    <circle cx="350" cy="250" r="2"/>
-    <circle cx="360" cy="260" r="1.5"/>
-    <circle cx="370" cy="245" r="1.8"/>
-    <circle cx="100" cy="350" r="2"/>
-    <circle cx="110" cy="340" r="1.5"/>
-    <circle cx="120" cy="355" r="1.8"/>
-    <circle cx="200" cy="300" r="2"/>
-    <circle cx="210" cy="290" r="1.5"/>
-    <circle cx="195" cy="310" r="1.8"/>
-  </g>
-
-  <!-- Beige/cream swirl lines -->
-  <g fill="none" stroke="#F5DEB3" stroke-width="1.5" opacity="0.7">
-    <path d="M130 250 Q150 240 160 260 Q170 280 150 290"/>
-    <path d="M270 80 Q290 70 300 90 Q310 110 290 120"/>
-    <path d="M350 150 Q370 140 380 160"/>
-    <path d="M30 350 Q50 340 60 360"/>
-  </g>
-
-  <!-- Small pink accent flowers -->
-  <g>
-    <circle cx="230" cy="200" r="8" fill="#FF9090"/>
-    <circle cx="230" cy="200" r="4" fill="#FFB0B0"/>
-    <circle cx="230" cy="200" r="2" fill="url(#gold-accent)"/>
-  </g>
-  <g>
-    <circle cx="140" cy="300" r="7" fill="#FF9090"/>
-    <circle cx="140" cy="300" r="3.5" fill="#FFB0B0"/>
-    <circle cx="140" cy="300" r="1.5" fill="url(#gold-accent)"/>
-  </g>
-  <g>
-    <circle cx="360" cy="80" r="6" fill="#FF9090"/>
-    <circle cx="360" cy="80" r="3" fill="#FFB0B0"/>
-    <circle cx="360" cy="80" r="1.5" fill="url(#gold-accent)"/>
-  </g>
-
-  <!-- Additional small paisley accents -->
-  <g transform="translate(180, 350) rotate(15) scale(0.4)">
-    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Z"
-          fill="url(#blue-purple)" opacity="0.8"/>
-    <circle cx="35" cy="50" r="4" fill="url(#gold-accent)"/>
-  </g>
-
-  <g transform="translate(330, 30) rotate(-25) scale(0.35)">
-    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Z"
-          fill="url(#blue-purple)" opacity="0.8"/>
-    <circle cx="35" cy="50" r="4" fill="url(#gold-accent)"/>
-  </g>
+  <!-- Subtle texture overlay for hand-painted look -->
+  <rect width="200" height="240" fill="url(#teal-fill)" opacity="0.03"/>
 </svg>
