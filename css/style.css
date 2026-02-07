@@ -116,9 +116,9 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Batik pattern SVG background */
+  /* Pink Peranakan batik pattern SVG background */
   background-image: url('../assets/images/batik-pattern.svg');
-  background-size: 200px 200px;
+  background-size: 400px 400px;
   background-position: 0 0;
   background-repeat: repeat;
   /* Mobile tap highlight */

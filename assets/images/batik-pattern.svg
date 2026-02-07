@@ -1,118 +1,222 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
-    <!-- Gold gradient for motifs -->
-    <linearGradient id="batik-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#D4A843;stop-opacity:0.15"/>
-      <stop offset="50%" style="stop-color:#A8872A;stop-opacity:0.12"/>
-      <stop offset="100%" style="stop-color:#D4A843;stop-opacity:0.15"/>
+    <!-- Pink/Coral base gradient -->
+    <linearGradient id="pink-base" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8A0B0"/>
+      <stop offset="50%" style="stop-color:#F0B0C0"/>
+      <stop offset="100%" style="stop-color:#E890A0"/>
     </linearGradient>
-    <linearGradient id="batik-gold-accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F2D98B;stop-opacity:0.08"/>
-      <stop offset="100%" style="stop-color:#D4A843;stop-opacity:0.1"/>
+
+    <!-- Blue-purple paisley gradient -->
+    <linearGradient id="blue-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B5CA8"/>
+      <stop offset="50%" style="stop-color:#8B7CC8"/>
+      <stop offset="100%" style="stop-color:#5B4C98"/>
+    </linearGradient>
+
+    <!-- Gold accent -->
+    <linearGradient id="gold-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A843"/>
+      <stop offset="50%" style="stop-color:#E8C860"/>
+      <stop offset="100%" style="stop-color:#C49833"/>
+    </linearGradient>
+
+    <!-- Coral flower gradient -->
+    <radialGradient id="coral-flower" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FF8080"/>
+      <stop offset="70%" style="stop-color:#E85A5A"/>
+      <stop offset="100%" style="stop-color:#C84040"/>
+    </radialGradient>
+
+    <!-- Teal leaf gradient -->
+    <linearGradient id="teal-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A8B7C"/>
+      <stop offset="100%" style="stop-color:#2A6B5C"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="200" height="200" fill="transparent"/>
+  <!-- Pink background -->
+  <rect width="400" height="400" fill="url(#pink-base)"/>
 
-  <!-- Center medallion -->
-  <g transform="translate(100, 100)">
-    <!-- Outer rings -->
-    <circle cx="0" cy="0" r="45" fill="none" stroke="url(#batik-gold)" stroke-width="1"/>
-    <circle cx="0" cy="0" r="40" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
-
-    <!-- 8-pointed star pattern -->
-    <path d="M0 -35 L5 -10 L35 0 L5 10 L0 35 L-5 10 L-35 0 L-5 -10 Z"
-          fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.5"/>
-
-    <!-- Inner diamond -->
-    <path d="M0 -20 L20 0 L0 20 L-20 0 Z"
-          fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
-
-    <!-- Center dot cluster -->
-    <circle cx="0" cy="0" r="8" fill="url(#batik-gold-accent)"/>
-    <circle cx="0" cy="0" r="4" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
-
-    <!-- Petal shapes around center -->
-    <g>
-      <ellipse cx="0" cy="-25" rx="4" ry="8" fill="url(#batik-gold-accent)"/>
-      <ellipse cx="0" cy="25" rx="4" ry="8" fill="url(#batik-gold-accent)"/>
-      <ellipse cx="25" cy="0" rx="8" ry="4" fill="url(#batik-gold-accent)"/>
-      <ellipse cx="-25" cy="0" rx="8" ry="4" fill="url(#batik-gold-accent)"/>
-    </g>
-
-    <!-- Diagonal petals -->
-    <g transform="rotate(45)">
-      <ellipse cx="0" cy="-25" rx="3" ry="6" fill="url(#batik-gold-accent)"/>
-      <ellipse cx="0" cy="25" rx="3" ry="6" fill="url(#batik-gold-accent)"/>
-      <ellipse cx="25" cy="0" rx="6" ry="3" fill="url(#batik-gold-accent)"/>
-      <ellipse cx="-25" cy="0" rx="6" ry="3" fill="url(#batik-gold-accent)"/>
-    </g>
+  <!-- Large paisley shape - top left -->
+  <g transform="translate(30, 30)">
+    <path d="M80 0 Q140 20 140 80 Q140 160 60 180 Q-20 160 -20 80 Q-20 20 40 0 Q60 -10 80 0 Z"
+          fill="url(#blue-purple)" opacity="0.9"/>
+    <!-- Inner paisley detail -->
+    <path d="M70 20 Q110 35 110 75 Q110 130 50 145 Q0 130 0 75 Q0 35 40 20 Q55 12 70 20 Z"
+          fill="none" stroke="#E8C860" stroke-width="2" opacity="0.8"/>
+    <!-- Paisley curl -->
+    <path d="M60 40 Q90 50 85 80 Q80 110 50 120"
+          fill="none" stroke="#F0D080" stroke-width="3" stroke-linecap="round"/>
+    <!-- Gold dots inside paisley -->
+    <circle cx="50" cy="60" r="4" fill="url(#gold-accent)"/>
+    <circle cx="65" cy="75" r="3" fill="url(#gold-accent)"/>
+    <circle cx="45" cy="85" r="3" fill="url(#gold-accent)"/>
+    <circle cx="60" cy="100" r="2.5" fill="url(#gold-accent)"/>
+    <circle cx="40" cy="70" r="2" fill="#F0D080"/>
+    <circle cx="55" cy="55" r="2" fill="#F0D080"/>
   </g>
 
-  <!-- Corner motifs (will tile at edges) -->
-  <!-- Top-left corner -->
-  <g transform="translate(0, 0)">
-    <path d="M0 30 Q15 15 30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
-    <circle cx="10" cy="10" r="6" fill="url(#batik-gold-accent)"/>
-    <circle cx="10" cy="10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  <!-- Large paisley shape - bottom right -->
+  <g transform="translate(250, 220) rotate(180)">
+    <path d="M80 0 Q140 20 140 80 Q140 160 60 180 Q-20 160 -20 80 Q-20 20 40 0 Q60 -10 80 0 Z"
+          fill="url(#blue-purple)" opacity="0.9"/>
+    <path d="M70 20 Q110 35 110 75 Q110 130 50 145 Q0 130 0 75 Q0 35 40 20 Q55 12 70 20 Z"
+          fill="none" stroke="#E8C860" stroke-width="2" opacity="0.8"/>
+    <path d="M60 40 Q90 50 85 80 Q80 110 50 120"
+          fill="none" stroke="#F0D080" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="50" cy="60" r="4" fill="url(#gold-accent)"/>
+    <circle cx="65" cy="75" r="3" fill="url(#gold-accent)"/>
+    <circle cx="45" cy="85" r="3" fill="url(#gold-accent)"/>
+    <circle cx="60" cy="100" r="2.5" fill="url(#gold-accent)"/>
   </g>
 
-  <!-- Top-right corner -->
-  <g transform="translate(200, 0)">
-    <path d="M0 30 Q-15 15 -30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
-    <circle cx="-10" cy="10" r="6" fill="url(#batik-gold-accent)"/>
-    <circle cx="-10" cy="10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  <!-- Medium paisley - top right -->
+  <g transform="translate(300, 60) rotate(45)">
+    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Q40 -5 50 0 Z"
+          fill="url(#blue-purple)" opacity="0.85"/>
+    <path d="M40 15 Q65 25 65 45 Q65 80 35 90 Q5 80 5 45 Q5 25 25 15 Z"
+          fill="none" stroke="#E8C860" stroke-width="1.5"/>
+    <circle cx="35" cy="45" r="3" fill="url(#gold-accent)"/>
+    <circle cx="40" cy="60" r="2.5" fill="url(#gold-accent)"/>
   </g>
 
-  <!-- Bottom-left corner -->
-  <g transform="translate(0, 200)">
-    <path d="M0 -30 Q15 -15 30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
-    <circle cx="10" cy="-10" r="6" fill="url(#batik-gold-accent)"/>
-    <circle cx="10" cy="-10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+  <!-- Medium paisley - bottom left -->
+  <g transform="translate(50, 280) rotate(-30)">
+    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Q40 -5 50 0 Z"
+          fill="url(#blue-purple)" opacity="0.85"/>
+    <path d="M40 15 Q65 25 65 45 Q65 80 35 90 Q5 80 5 45 Q5 25 25 15 Z"
+          fill="none" stroke="#E8C860" stroke-width="1.5"/>
+    <circle cx="35" cy="45" r="3" fill="url(#gold-accent)"/>
+    <circle cx="40" cy="60" r="2.5" fill="url(#gold-accent)"/>
   </g>
 
-  <!-- Bottom-right corner -->
-  <g transform="translate(200, 200)">
-    <path d="M0 -30 Q-15 -15 -30 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.8"/>
-    <circle cx="-10" cy="-10" r="6" fill="url(#batik-gold-accent)"/>
-    <circle cx="-10" cy="-10" r="3" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
-  </g>
-
-  <!-- Edge connectors -->
-  <!-- Top edge -->
-  <g transform="translate(100, 0)">
-    <ellipse cx="0" cy="8" rx="15" ry="6" fill="url(#batik-gold-accent)"/>
-    <path d="M-20 0 Q-10 12 0 12 Q10 12 20 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
-  </g>
-
-  <!-- Bottom edge -->
-  <g transform="translate(100, 200)">
-    <ellipse cx="0" cy="-8" rx="15" ry="6" fill="url(#batik-gold-accent)"/>
-    <path d="M-20 0 Q-10 -12 0 -12 Q10 -12 20 0" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
-  </g>
-
-  <!-- Left edge -->
-  <g transform="translate(0, 100)">
-    <ellipse cx="8" cy="0" rx="6" ry="15" fill="url(#batik-gold-accent)"/>
-    <path d="M0 -20 Q12 -10 12 0 Q12 10 0 20" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
-  </g>
-
-  <!-- Right edge -->
+  <!-- Coral/Red flowers -->
   <g transform="translate(200, 100)">
-    <ellipse cx="-8" cy="0" rx="6" ry="15" fill="url(#batik-gold-accent)"/>
-    <path d="M0 -20 Q-12 -10 -12 0 Q-12 10 0 20" fill="none" stroke="url(#batik-gold)" stroke-width="0.5"/>
+    <!-- Flower petals -->
+    <ellipse cx="0" cy="-15" rx="12" ry="18" fill="url(#coral-flower)"/>
+    <ellipse cx="14" cy="-5" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(72)"/>
+    <ellipse cx="9" cy="12" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(144)"/>
+    <ellipse cx="-9" cy="12" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(216)"/>
+    <ellipse cx="-14" cy="-5" rx="12" ry="18" fill="url(#coral-flower)" transform="rotate(288)"/>
+    <!-- Flower center -->
+    <circle cx="0" cy="0" r="8" fill="#C84040"/>
+    <circle cx="0" cy="0" r="4" fill="url(#gold-accent)"/>
   </g>
 
-  <!-- Scattered dots pattern -->
-  <circle cx="50" cy="50" r="2" fill="url(#batik-gold)" opacity="0.5"/>
-  <circle cx="150" cy="50" r="2" fill="url(#batik-gold)" opacity="0.5"/>
-  <circle cx="50" cy="150" r="2" fill="url(#batik-gold)" opacity="0.5"/>
-  <circle cx="150" cy="150" r="2" fill="url(#batik-gold)" opacity="0.5"/>
+  <g transform="translate(320, 320)">
+    <ellipse cx="0" cy="-12" rx="10" ry="15" fill="url(#coral-flower)"/>
+    <ellipse cx="11" cy="-4" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(72)"/>
+    <ellipse cx="7" cy="10" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(144)"/>
+    <ellipse cx="-7" cy="10" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(216)"/>
+    <ellipse cx="-11" cy="-4" rx="10" ry="15" fill="url(#coral-flower)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="6" fill="#C84040"/>
+    <circle cx="0" cy="0" r="3" fill="url(#gold-accent)"/>
+  </g>
 
-  <!-- Small diamond accents -->
-  <path d="M50 100 L55 95 L60 100 L55 105 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
-  <path d="M140 100 L145 95 L150 100 L145 105 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
-  <path d="M100 50 L105 45 L110 50 L105 55 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
-  <path d="M100 140 L105 145 L110 150 L105 155 Z" fill="url(#batik-gold-accent)" stroke="url(#batik-gold)" stroke-width="0.3"/>
+  <g transform="translate(80, 180)">
+    <ellipse cx="0" cy="-10" rx="8" ry="12" fill="url(#coral-flower)"/>
+    <ellipse cx="9" cy="-3" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(72)"/>
+    <ellipse cx="6" cy="8" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(144)"/>
+    <ellipse cx="-6" cy="8" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(216)"/>
+    <ellipse cx="-9" cy="-3" rx="8" ry="12" fill="url(#coral-flower)" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="5" fill="#C84040"/>
+    <circle cx="0" cy="0" r="2.5" fill="url(#gold-accent)"/>
+  </g>
+
+  <!-- Teal/Green leaves -->
+  <g transform="translate(180, 140) rotate(30)">
+    <ellipse cx="0" cy="0" rx="8" ry="20" fill="url(#teal-leaf)"/>
+    <path d="M0 -18 L0 18" stroke="#1A5040" stroke-width="1"/>
+  </g>
+  <g transform="translate(220, 130) rotate(-20)">
+    <ellipse cx="0" cy="0" rx="7" ry="18" fill="url(#teal-leaf)"/>
+    <path d="M0 -16 L0 16" stroke="#1A5040" stroke-width="1"/>
+  </g>
+  <g transform="translate(160, 120) rotate(50)">
+    <ellipse cx="0" cy="0" rx="6" ry="15" fill="url(#teal-leaf)"/>
+  </g>
+
+  <g transform="translate(300, 350) rotate(-40)">
+    <ellipse cx="0" cy="0" rx="7" ry="18" fill="url(#teal-leaf)"/>
+    <path d="M0 -16 L0 16" stroke="#1A5040" stroke-width="1"/>
+  </g>
+  <g transform="translate(340, 340) rotate(20)">
+    <ellipse cx="0" cy="0" rx="6" ry="15" fill="url(#teal-leaf)"/>
+  </g>
+
+  <!-- Gold dotted swirls and accents -->
+  <!-- Swirl pattern 1 -->
+  <g fill="url(#gold-accent)">
+    <circle cx="170" cy="50" r="3"/>
+    <circle cx="180" cy="45" r="2.5"/>
+    <circle cx="190" cy="42" r="2"/>
+    <circle cx="200" cy="40" r="1.8"/>
+    <circle cx="210" cy="40" r="1.5"/>
+  </g>
+
+  <!-- Swirl pattern 2 -->
+  <g fill="url(#gold-accent)">
+    <circle cx="280" cy="180" r="3"/>
+    <circle cx="290" cy="175" r="2.5"/>
+    <circle cx="300" cy="172" r="2"/>
+    <circle cx="310" cy="170" r="1.8"/>
+  </g>
+
+  <!-- Scattered gold dots -->
+  <g fill="#E8C860" opacity="0.9">
+    <circle cx="150" cy="200" r="2"/>
+    <circle cx="160" cy="210" r="1.5"/>
+    <circle cx="145" cy="220" r="2"/>
+    <circle cx="250" cy="150" r="2"/>
+    <circle cx="260" cy="140" r="1.5"/>
+    <circle cx="240" cy="145" r="1.8"/>
+    <circle cx="350" cy="250" r="2"/>
+    <circle cx="360" cy="260" r="1.5"/>
+    <circle cx="370" cy="245" r="1.8"/>
+    <circle cx="100" cy="350" r="2"/>
+    <circle cx="110" cy="340" r="1.5"/>
+    <circle cx="120" cy="355" r="1.8"/>
+    <circle cx="200" cy="300" r="2"/>
+    <circle cx="210" cy="290" r="1.5"/>
+    <circle cx="195" cy="310" r="1.8"/>
+  </g>
+
+  <!-- Beige/cream swirl lines -->
+  <g fill="none" stroke="#F5DEB3" stroke-width="1.5" opacity="0.7">
+    <path d="M130 250 Q150 240 160 260 Q170 280 150 290"/>
+    <path d="M270 80 Q290 70 300 90 Q310 110 290 120"/>
+    <path d="M350 150 Q370 140 380 160"/>
+    <path d="M30 350 Q50 340 60 360"/>
+  </g>
+
+  <!-- Small pink accent flowers -->
+  <g>
+    <circle cx="230" cy="200" r="8" fill="#FF9090"/>
+    <circle cx="230" cy="200" r="4" fill="#FFB0B0"/>
+    <circle cx="230" cy="200" r="2" fill="url(#gold-accent)"/>
+  </g>
+  <g>
+    <circle cx="140" cy="300" r="7" fill="#FF9090"/>
+    <circle cx="140" cy="300" r="3.5" fill="#FFB0B0"/>
+    <circle cx="140" cy="300" r="1.5" fill="url(#gold-accent)"/>
+  </g>
+  <g>
+    <circle cx="360" cy="80" r="6" fill="#FF9090"/>
+    <circle cx="360" cy="80" r="3" fill="#FFB0B0"/>
+    <circle cx="360" cy="80" r="1.5" fill="url(#gold-accent)"/>
+  </g>
+
+  <!-- Additional small paisley accents -->
+  <g transform="translate(180, 350) rotate(15) scale(0.4)">
+    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Z"
+          fill="url(#blue-purple)" opacity="0.8"/>
+    <circle cx="35" cy="50" r="4" fill="url(#gold-accent)"/>
+  </g>
+
+  <g transform="translate(330, 30) rotate(-25) scale(0.35)">
+    <path d="M50 0 Q90 15 90 50 Q90 100 40 115 Q-10 100 -10 50 Q-10 15 30 0 Z"
+          fill="url(#blue-purple)" opacity="0.8"/>
+    <circle cx="35" cy="50" r="4" fill="url(#gold-accent)"/>
+  </g>
 </svg>
