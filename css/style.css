@@ -1508,7 +1508,7 @@ ul {
    Events Timeline
    ================================ */
 .events-timeline {
-  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xxl);
+  padding: var(--spacing-lg) 0 var(--spacing-xxl);
   background: linear-gradient(
     180deg,
     rgba(26, 58, 42, 0.2) 0%,
@@ -1517,10 +1517,12 @@ ul {
 }
 
 .timeline-container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: none;
+  margin-left: 1in;
+  margin-right: 1in;
   position: relative;
   padding-left: 40px;
+  box-sizing: border-box;
 }
 
 /* Vertical timeline line */
@@ -1888,7 +1890,7 @@ ul {
    Page Header (Events, Travel)
    ================================ */
 .page-header {
-  padding: calc(var(--nav-height) + var(--spacing-xl)) var(--spacing-md) var(--spacing-lg);
+  padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-lg);
   /* Darkening overlay */
   background: linear-gradient(
     180deg,
@@ -1900,6 +1902,11 @@ ul {
 .page-header .content-panel {
   text-align: center;
   padding: var(--spacing-xl) var(--spacing-lg);
+  width: auto;
+  max-width: none;
+  margin-left: 1in;
+  margin-right: 1in;
+  box-sizing: border-box;
 }
 
 .page-header .content-panel::before {
@@ -2567,6 +2574,20 @@ section:not(:last-of-type)::after {
   .travel-routes .content-panel {
     width: auto;
     max-width: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Page header mobile */
+  .page-header .content-panel {
+    width: auto;
+    max-width: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Events timeline mobile */
+  .timeline-container {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
