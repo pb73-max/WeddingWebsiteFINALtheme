@@ -1020,8 +1020,16 @@ ul {
 /* ================================
    RSVP Form
    ================================ */
+.rsvp .content-panel {
+  width: auto;
+  max-width: none;
+  margin-left: 1in;
+  margin-right: 1in;
+  box-sizing: border-box;
+}
+
 .rsvp-panel {
-  max-width: 600px;
+  max-width: none;
 }
 
 .rsvp-form {
@@ -2524,6 +2532,13 @@ section:not(:last-of-type)::after {
   }
 
   /* RSVP Form mobile */
+  .rsvp .content-panel {
+    width: auto;
+    max-width: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .rsvp-panel {
     padding: var(--spacing-lg) var(--spacing-md);
   }
