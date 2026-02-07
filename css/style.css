@@ -2401,7 +2401,10 @@ section:not(:last-of-type)::after {
    ================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
   .content-panel {
-    margin: 0 var(--spacing-lg);
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - var(--spacing-xl));
+    max-width: var(--content-max-width);
   }
 }
 
@@ -2410,7 +2413,10 @@ section:not(:last-of-type)::after {
    ================================ */
 @media (max-width: 767px) {
   .content-panel {
-    margin: 0 var(--spacing-sm);
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - var(--spacing-lg));
+    max-width: var(--content-max-width);
     padding: var(--spacing-lg) var(--spacing-md);
   }
 
@@ -2753,7 +2759,9 @@ section:not(:last-of-type)::after {
   }
 
   .content-panel {
-    margin: 0 var(--spacing-xs);
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - var(--spacing-sm));
     padding: var(--spacing-md);
   }
 
