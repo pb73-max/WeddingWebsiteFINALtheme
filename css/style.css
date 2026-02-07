@@ -2444,8 +2444,8 @@ section:not(:last-of-type)::after {
   .hero .content-panel {
     width: auto;
     max-width: none;
-    margin-left: 1in;
-    margin-right: 1in;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .hero-panel {
