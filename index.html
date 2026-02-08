@@ -57,10 +57,10 @@
       <div class="content-panel hero-panel">
 
         <!-- Ganesha Icon -->
-        <img src="assets/images/ganesha.svg" class="ganesha-icon" alt="" aria-hidden="true" width="70" height="70">
+        <img src="assets/images/ganesha.svg" class="ganesha-icon" alt="" aria-hidden="true" width="90" height="90">
 
-        <!-- Gold Filigree Divider -->
-        <div class="ornamental-divider"><span class="center-motif">✦</span></div>
+        <!-- Gold Filigree Divider Image -->
+        <img src="assets/images/gold-filigree.svg" class="gold-filigree-divider" alt="" aria-hidden="true">
 
         <!-- Floral Decorations -->
         <div class="hero-floral floral-left" aria-hidden="true">
@@ -80,16 +80,30 @@
                 <stop offset="70%" stop-color="#D4A843"/>
                 <stop offset="100%" stop-color="#C9982E"/>
               </linearGradient>
+              <linearGradient id="archFill" x1="0.5" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.1"/>
+                <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.03"/>
+              </linearGradient>
             </defs>
-            <path d="M20,500 L20,200 Q20,50 200,20 Q380,50 380,200 L380,500 Z"
-                  fill="none" stroke="url(#archGold)" stroke-width="3"/>
-            <path d="M30,500 L30,205 Q30,60 200,30 Q370,60 370,205 L370,500 Z"
-                  fill="none" stroke="url(#archGold)" stroke-width="1" opacity="0.4"/>
+            <!-- Outer arch with gold fill -->
+            <path d="M15,500 L15,200 Q15,40 200,15 Q385,40 385,200 L385,500 Z"
+                  fill="url(#archFill)" stroke="url(#archGold)" stroke-width="4"/>
+            <!-- Inner decorative arch line -->
+            <path d="M30,500 L30,205 Q30,55 200,30 Q370,55 370,205 L370,500 Z"
+                  fill="none" stroke="url(#archGold)" stroke-width="1.5" opacity="0.5"/>
+            <!-- Decorative arch peak detail -->
+            <circle cx="200" cy="22" r="4" fill="#E8C84A" opacity="0.6"/>
+            <!-- Corner ornaments -->
+            <rect x="17" y="480" width="20" height="2" fill="#D4A843" opacity="0.4"/>
+            <rect x="363" y="480" width="20" height="2" fill="#D4A843" opacity="0.4"/>
           </svg>
           <div class="arch-content">
+            <!-- Decorative text above couple names -->
+            <p class="decorative-text">to celebrate the wedding of</p>
             <!-- Wedding Text -->
             <div class="hero-text">
               <h1 id="hero-title" class="couple-names">Prerna <span class="ampersand">&</span> Arpit</h1>
+              <div class="ornamental-divider" style="margin: 0.5rem auto 1rem;"><span class="center-motif">✦</span></div>
               <div class="venue-info">
                 <p class="date-venue date-primary">23–24 April 2026</p>
                 <p class="venue-divider" aria-hidden="true">✦</p>
@@ -146,8 +160,13 @@
     <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
       <div class="content-panel rsvp-panel reveal">
         <h2 id="rsvp-title" class="section-title">RSVP</h2>
-        <div class="ornamental-divider"><span class="center-motif">✦</span></div>
+        <img src="assets/images/gold-filigree.svg" class="gold-filigree-divider" alt="" aria-hidden="true">
         <p class="section-subtitle">Please respond by 14th March 2026</p>
+        <!-- Corner Lotus Motifs -->
+        <div class="corner-motif corner-top-left" aria-hidden="true"></div>
+        <div class="corner-motif corner-top-right" aria-hidden="true"></div>
+        <div class="corner-motif corner-bottom-left" aria-hidden="true"></div>
+        <div class="corner-motif corner-bottom-right" aria-hidden="true"></div>
 
         <form class="rsvp-form" id="rsvp-form" novalidate>
           <!-- Your Name -->

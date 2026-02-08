@@ -130,6 +130,10 @@ body {
   line-height: 1.7;
   color: var(--text-light);
   background-color: var(--emerald-green);
+  background-image: url('../assets/images/background-pattern.jpg');
+  background-size: 400px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -316,8 +320,10 @@ ul {
   outline: 2px solid #C07040;
   outline-offset: 6px;
   box-shadow:
-    inset 0 0 30px rgba(201, 168, 76, 0.1),
-    0 10px 40px rgba(0, 0, 0, 0.3);
+    inset 0 0 40px rgba(201, 168, 76, 0.12),
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 12px rgba(27, 94, 59, 0.5);
+  overflow: visible;
 }
 
 /* Decorative inner border using pseudo-element */
@@ -328,8 +334,9 @@ ul {
   left: 12px;
   right: 12px;
   bottom: 12px;
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(201, 168, 76, 0.35);
   pointer-events: none;
+  box-shadow: inset 0 0 20px rgba(201, 168, 76, 0.06);
 }
 
 /* Gold filigree line at the top of panels */
@@ -586,6 +593,20 @@ ul {
   display: block;
   padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-xl);
   background: var(--gradient-emerald);
+  position: relative;
+}
+
+/* Subtle damask texture overlay on hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/batik-pattern.svg');
+  background-size: 120px;
+  background-repeat: repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero .content-panel {
@@ -596,6 +617,9 @@ ul {
   margin-left: 1in;
   margin-right: 1in;
   box-sizing: border-box;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
 /* Extra decorative frame for hero panel */
@@ -1511,6 +1535,19 @@ ul {
 .events-timeline {
   padding: var(--spacing-lg) 0 var(--spacing-xxl);
   background: transparent;
+  position: relative;
+}
+
+.events-timeline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/batik-pattern.svg');
+  background-size: 150px;
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .timeline-container {
@@ -1520,6 +1557,7 @@ ul {
   position: relative;
   padding-left: 0;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 /* Vertical timeline line - hidden */
@@ -1823,35 +1861,36 @@ ul {
 /* Corner Lotus/Fan Motifs */
 .corner-motif {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  opacity: 0.75;
+  width: 70px;
+  height: 70px;
+  opacity: 0.9;
   background-image: url('../assets/images/lotus-corner.svg');
   background-size: contain;
   background-repeat: no-repeat;
+  filter: drop-shadow(0 0 4px rgba(226, 69, 133, 0.3));
 }
 
 .corner-top-left {
-  top: 20px;
-  left: 20px;
+  top: 16px;
+  left: 16px;
   transform: rotate(-45deg);
 }
 
 .corner-top-right {
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   transform: rotate(45deg);
 }
 
 .corner-bottom-left {
-  bottom: 20px;
-  left: 20px;
+  bottom: 16px;
+  left: 16px;
   transform: rotate(-135deg);
 }
 
 .corner-bottom-right {
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 16px;
   transform: rotate(135deg);
 }
 
@@ -1861,6 +1900,19 @@ ul {
 .page-header {
   padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-lg);
   background: var(--gradient-emerald);
+  position: relative;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/batik-pattern.svg');
+  background-size: 120px;
+  background-repeat: repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .page-header .content-panel {
@@ -1871,6 +1923,8 @@ ul {
   margin-left: 1in;
   margin-right: 1in;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .page-header .content-panel::before {
@@ -2265,26 +2319,51 @@ section {
   padding: var(--spacing-xl) var(--spacing-md);
 }
 
-/* Sections - clean emerald background */
+/* Sections - textured emerald background */
 section:not(.hero):not(.page-header) {
   background: transparent;
+  position: relative;
 }
 
-/* Section divider - decorative line between sections */
+/* RSVP Section — Warm Cream Alternating Background */
+.rsvp {
+  background: var(--warm-cream) !important;
+  position: relative;
+}
+
+.rsvp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/batik-pattern.svg');
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rsvp .content-panel {
+  background: var(--emerald-green);
+  position: relative;
+  z-index: 1;
+}
+
+/* Section divider - decorative gold line between sections */
 section:not(:last-of-type)::after {
   content: '';
   display: block;
-  width: 100px;
+  width: 200px;
   height: 2px;
   margin: var(--spacing-xl) auto 0;
   background: linear-gradient(90deg,
     transparent 0%,
-    var(--metallic-gold) 30%,
+    var(--metallic-gold) 20%,
     var(--light-gold) 50%,
-    var(--metallic-gold) 70%,
+    var(--metallic-gold) 80%,
     transparent 100%
   );
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 /* ================================
@@ -2298,6 +2377,19 @@ section:not(:last-of-type)::after {
   padding-bottom: calc(var(--spacing-xxl) + env(safe-area-inset-bottom));
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+
+/* Subtle texture overlay on footer */
+.site-footer .footer-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/batik-pattern.svg');
+  background-size: 100px;
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
 }
 
 /* Decorative top border */
@@ -2429,14 +2521,14 @@ section:not(:last-of-type)::after {
   }
 
   .corner-motif {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
   }
 
-  .corner-top-left { top: 12px; left: 12px; }
-  .corner-top-right { top: 12px; right: 12px; }
-  .corner-bottom-left { bottom: 12px; left: 12px; }
-  .corner-bottom-right { bottom: 12px; right: 12px; }
+  .corner-top-left { top: 10px; left: 10px; }
+  .corner-top-right { top: 10px; right: 10px; }
+  .corner-bottom-left { bottom: 10px; left: 10px; }
+  .corner-bottom-right { bottom: 10px; right: 10px; }
 
   /* Hero mobile adjustments */
   .couple-names {
@@ -2985,7 +3077,7 @@ section:not(:last-of-type)::after {
 
 /* Apply shimmer to Ganesha icon */
 .ganesha-icon {
-  animation: pulse-glow 4s ease-in-out infinite;
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 /* Gentle float for florals */
@@ -3336,45 +3428,56 @@ section:not(:last-of-type)::after {
 @media (min-width: 1024px) {
   .bandhani-border {
     display: block;
-    width: 60px;
+    width: 80px;
     flex-shrink: 0;
     position: sticky;
     top: 0;
     height: 100vh;
     background: var(--gradient-bandhani);
     z-index: 10;
+    overflow: hidden;
   }
 
-  /* CSS paisley pattern overlay */
+  /* Rich batik pattern overlay */
   .bandhani-border::before {
     content: '';
     position: absolute;
     inset: 0;
+    background-image: url('../assets/images/batik-pattern.svg');
+    background-size: 80px;
+    background-repeat: repeat;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+  }
+
+  /* Dense paisley dot pattern */
+  .bandhani-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background:
-      radial-gradient(circle 4px at 15px 20px, rgba(255,255,255,0.15) 0%, transparent 100%),
-      radial-gradient(circle 4px at 45px 40px, rgba(255,255,255,0.1) 0%, transparent 100%),
-      radial-gradient(circle 4px at 30px 60px, rgba(255,255,255,0.12) 0%, transparent 100%),
-      radial-gradient(circle 3px at 15px 80px, rgba(255,255,255,0.08) 0%, transparent 100%),
-      radial-gradient(circle 3px at 45px 100px, rgba(255,255,255,0.1) 0%, transparent 100%);
-    background-size: 60px 120px;
+      radial-gradient(circle 5px at 20px 15px, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(circle 5px at 55px 35px, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(circle 4px at 35px 55px, rgba(255,255,255,0.18) 0%, transparent 100%),
+      radial-gradient(circle 5px at 15px 75px, rgba(255,255,255,0.12) 0%, transparent 100%),
+      radial-gradient(circle 4px at 60px 95px, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(circle 3px at 40px 15px, rgba(232,200,74,0.12) 0%, transparent 100%),
+      radial-gradient(circle 3px at 10px 45px, rgba(232,200,74,0.1) 0%, transparent 100%);
+    background-size: 80px 110px;
   }
 
   .bandhani-left {
-    border-right: 1px solid rgba(212, 168, 67, 0.3);
+    border-right: 2px solid rgba(212, 168, 67, 0.5);
   }
 
   .bandhani-right {
-    border-left: 1px solid rgba(212, 168, 67, 0.3);
+    border-left: 2px solid rgba(212, 168, 67, 0.5);
   }
 }
 
 @media (min-width: 1440px) {
   .bandhani-border {
-    width: 80px;
-  }
-
-  .bandhani-border::before {
-    background-size: 80px 120px;
+    width: 100px;
   }
 }
 
@@ -3386,22 +3489,23 @@ section:not(:last-of-type)::after {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin: 1.5rem auto;
-  max-width: 300px;
+  margin: 1.5rem auto 2rem;
+  max-width: 350px;
 }
 
 .ornamental-divider::before,
 .ornamental-divider::after {
   content: '';
   flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #D4A843, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C9982E 20%, #E8C84A 50%, #C9982E 80%, transparent);
 }
 
 .center-motif {
   color: var(--rich-gold);
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 1.1rem;
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(212, 168, 67, 0.4);
 }
 
 /* ================================
@@ -3412,9 +3516,10 @@ section:not(:last-of-type)::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: var(--spacing-lg) auto;
-  max-width: 400px;
+  margin: var(--spacing-xl) auto;
+  max-width: 420px;
   width: 100%;
+  padding: var(--spacing-lg) 0;
 }
 
 .arch-frame {
@@ -3424,12 +3529,13 @@ section:not(:last-of-type)::after {
   height: 100%;
   pointer-events: none;
   will-change: transform, opacity;
+  filter: drop-shadow(0 0 12px rgba(212, 168, 67, 0.3));
 }
 
 .arch-content {
   position: relative;
   z-index: 1;
-  padding: var(--spacing-xl) var(--spacing-lg);
+  padding: var(--spacing-xxl) var(--spacing-xl);
   text-align: center;
   width: 100%;
 }
@@ -3439,33 +3545,45 @@ section:not(:last-of-type)::after {
    ================================ */
 .hero-floral {
   position: absolute;
-  width: 100px;
-  top: 60px;
-  z-index: 0;
+  width: 220px;
+  top: -20px;
+  z-index: 2;
   pointer-events: none;
   will-change: transform, opacity;
+  overflow: visible;
 }
 
 .hero-floral img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(3px 6px 10px rgba(0, 0, 0, 0.35));
 }
 
 .hero-floral.floral-left {
-  left: 10px;
+  left: -40px;
 }
 
 .hero-floral.floral-right {
-  right: 10px;
+  right: -40px;
+}
+
+@media (max-width: 1024px) {
+  .hero-floral {
+    width: 160px;
+    top: 0px;
+  }
+  .hero-floral.floral-left { left: -20px; }
+  .hero-floral.floral-right { right: -20px; }
 }
 
 @media (max-width: 767px) {
   .hero-floral {
-    width: 60px;
-    top: 40px;
-    opacity: 0.6;
+    width: 100px;
+    top: 20px;
+    opacity: 0.7;
   }
+  .hero-floral.floral-left { left: -10px; }
+  .hero-floral.floral-right { right: -10px; }
 
   .mughal-arch-container {
     max-width: 300px;
@@ -3474,7 +3592,9 @@ section:not(:last-of-type)::after {
 
 @media (max-width: 480px) {
   .hero-floral {
-    display: none;
+    width: 70px;
+    top: 30px;
+    opacity: 0.5;
   }
 
   .mughal-arch-container {
@@ -3489,6 +3609,9 @@ section:not(:last-of-type)::after {
   display: block;
   margin: 0 auto var(--spacing-lg);
   will-change: transform, opacity;
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 0 10px rgba(212, 168, 67, 0.5));
 }
 
 /* ================================
@@ -3501,6 +3624,25 @@ section:not(:last-of-type)::after {
 
 .section-cream .section-title {
   color: var(--coral-red);
+}
+
+/* Decorative text (Yatra One accents) */
+.decorative-text {
+  font-family: var(--font-script);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: var(--coral-red);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Gold filigree horizontal divider image */
+.gold-filigree-divider {
+  display: block;
+  margin: var(--spacing-md) auto;
+  max-width: 200px;
+  height: auto;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 4px rgba(212, 168, 67, 0.3));
 }
 
 /* ================================
