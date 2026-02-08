@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Prerna & Arpit's Wedding - 23-24 April 2026 at Taj Ambad, Nashik. Join us to celebrate our special day.">
-  <meta name="theme-color" content="#1A5E3A">
+  <meta name="theme-color" content="#1B5E3B">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Prerna & Arpit's Wedding">
@@ -14,7 +14,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Yatra+One&family=Cormorant+Garamond:wght@600;700&family=Lora:wght@400;500&family=Josefin+Sans:wght@300;400;600&family=Yeseva+One&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
   <title>Prerna & Arpit's Wedding | 23-24 April 2026</title>
@@ -48,17 +48,54 @@
   <!-- Main Content -->
   <main id="main-content">
 
+  <div class="page-frame">
+    <div class="bandhani-border bandhani-left" aria-hidden="true"></div>
+    <div class="page-frame-content">
+
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="content-panel hero-panel">
 
-        <!-- Wedding Text -->
-        <div class="hero-text">
-          <h1 id="hero-title" class="couple-names">Prerna <span class="ampersand">&</span> Arpit</h1>
-          <div class="venue-info">
-            <p class="date-venue date-primary">23–24 April 2026</p>
-            <p class="venue-divider" aria-hidden="true">✦</p>
-            <p class="date-venue venue-name"><a href="https://maps.google.com/?q=Taj+Gateway+Nashik+Ambad" target="_blank" rel="noopener noreferrer" class="venue-link">Taj Ambad, Nashik</a></p>
+        <!-- Ganesha Icon -->
+        <img src="assets/images/ganesha.svg" class="ganesha-icon" alt="" aria-hidden="true" width="70" height="70">
+
+        <!-- Gold Filigree Divider -->
+        <div class="ornamental-divider"><span class="center-motif">✦</span></div>
+
+        <!-- Floral Decorations -->
+        <div class="hero-floral floral-left" aria-hidden="true">
+          <img src="assets/images/floral-left.svg" alt="">
+        </div>
+        <div class="hero-floral floral-right" aria-hidden="true">
+          <img src="assets/images/floral-right.svg" alt="">
+        </div>
+
+        <!-- Mughal Arch Frame -->
+        <div class="mughal-arch-container">
+          <svg class="arch-frame" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="archGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#C9982E"/>
+                <stop offset="40%" stop-color="#E8C84A"/>
+                <stop offset="70%" stop-color="#D4A843"/>
+                <stop offset="100%" stop-color="#C9982E"/>
+              </linearGradient>
+            </defs>
+            <path d="M20,500 L20,200 Q20,50 200,20 Q380,50 380,200 L380,500 Z"
+                  fill="none" stroke="url(#archGold)" stroke-width="3"/>
+            <path d="M30,500 L30,205 Q30,60 200,30 Q370,60 370,205 L370,500 Z"
+                  fill="none" stroke="url(#archGold)" stroke-width="1" opacity="0.4"/>
+          </svg>
+          <div class="arch-content">
+            <!-- Wedding Text -->
+            <div class="hero-text">
+              <h1 id="hero-title" class="couple-names">Prerna <span class="ampersand">&</span> Arpit</h1>
+              <div class="venue-info">
+                <p class="date-venue date-primary">23–24 April 2026</p>
+                <p class="venue-divider" aria-hidden="true">✦</p>
+                <p class="date-venue venue-name"><a href="https://maps.google.com/?q=Taj+Gateway+Nashik+Ambad" target="_blank" rel="noopener noreferrer" class="venue-link">Taj Ambad, Nashik</a></p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -109,6 +146,7 @@
     <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
       <div class="content-panel rsvp-panel reveal">
         <h2 id="rsvp-title" class="section-title">RSVP</h2>
+        <div class="ornamental-divider"><span class="center-motif">✦</span></div>
         <p class="section-subtitle">Please respond by 14th March 2026</p>
 
         <form class="rsvp-form" id="rsvp-form" novalidate>
@@ -244,6 +282,10 @@
       </div>
     </section>
 
+    </div><!-- /.page-frame-content -->
+    <div class="bandhani-border bandhani-right" aria-hidden="true"></div>
+  </div><!-- /.page-frame -->
+
   </main>
 
   <!-- Footer -->
@@ -255,6 +297,9 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

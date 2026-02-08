@@ -1,6 +1,7 @@
 /**
  * Prerna & Arpit Wedding Website
  * Main JavaScript - All functionality in single IIFE
+ * GSAP animations with IntersectionObserver fallback
  */
 (function() {
   'use strict';
@@ -13,6 +14,9 @@
   // Google Apps Script Web App URL
   // Instructions: See google-apps-script.js for setup, then paste your deployment URL below
   const RSVP_ENDPOINT = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+  // Whether GSAP is available
+  const hasGSAP = typeof gsap !== 'undefined';
 
   // ================================
   // State
@@ -74,6 +78,32 @@
     state.mobileMenuOpen = false;
     elements.navMenu.classList.remove('is-open');
     elements.navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // ================================
+  // Smooth Scroll (GSAP or native)
+  // ================================
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+
+        if (hasGSAP && typeof ScrollToPlugin !== 'undefined') {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: target, offsetY: 70 },
+            ease: 'power2.inOut'
+          });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
   }
 
   // ================================
@@ -305,17 +335,15 @@
     }
 
     // Submit to Google Apps Script
-    // Note: Google Apps Script handles CORS automatically when deployed as web app
     const response = await fetch(RSVP_ENDPOINT, {
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Content-Type': 'text/plain', // Required for Google Apps Script
+        'Content-Type': 'text/plain',
       },
       body: JSON.stringify(data)
     });
 
-    // Google Apps Script always returns 200, check response content
     const result = await response.json();
 
     if (result.status === 'error') {
@@ -332,7 +360,11 @@
 
     // Scroll to success message
     if (elements.rsvpSuccess) {
-      elements.rsvpSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (hasGSAP && typeof ScrollToPlugin !== 'undefined') {
+        gsap.to(window, { duration: 0.8, scrollTo: { y: elements.rsvpSuccess, offsetY: 100 }, ease: 'power2.inOut' });
+      } else {
+        elements.rsvpSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
   }
 
@@ -361,80 +393,276 @@
 
     // Scroll to form
     if (elements.rsvpForm) {
-      elements.rsvpForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (hasGSAP && typeof ScrollToPlugin !== 'undefined') {
+        gsap.to(window, { duration: 0.8, scrollTo: { y: elements.rsvpForm, offsetY: 70 }, ease: 'power2.inOut' });
+      } else {
+        elements.rsvpForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }
 
   // ================================
-  // Scroll Effects
+  // GSAP Animations
   // ================================
-  function initScrollEffects() {
+  function initGSAPAnimations() {
+    if (!hasGSAP) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    if (typeof ScrollToPlugin !== 'undefined') {
+      gsap.registerPlugin(ScrollToPlugin);
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      // Show everything immediately
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      return;
+    }
+
+    // Mark body as js-loaded for CSS hooks
+    document.body.classList.add('js-loaded');
+
+    // Scroll reveal for .reveal elements
+    initGSAPScrollReveal();
+
+    // Page load animation (index.html hero only)
+    initHeroAnimation();
+
+    // Floral parallax (desktop only)
+    initFloralParallax();
+
+    // Navbar scroll transition
+    initNavbarScroll();
+
+    // Hover micro-interactions
+    initHoverEffects();
+
+    // Floral sway
+    initFloralSway();
+  }
+
+  function initGSAPScrollReveal() {
+    gsap.utils.toArray('.reveal').forEach(el => {
+      // Skip hero panel — it animates via the hero timeline
+      if (el.closest('.hero')) return;
+
+      gsap.from(el, {
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
+    });
+
+    // Stagger for animate-in elements
+    gsap.utils.toArray('.reveal-stagger').forEach(group => {
+      const items = group.querySelectorAll('.reveal-item');
+      if (items.length === 0) return;
+
+      gsap.from(items, {
+        y: 40,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: group,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
+    });
+  }
+
+  function initHeroAnimation() {
+    const heroPanel = document.querySelector('.hero-panel');
+    if (!heroPanel) return;
+
+    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+    // 1. Ganesha icon
+    const ganesha = heroPanel.querySelector('.ganesha-icon');
+    if (ganesha) {
+      tl.from(ganesha, { scale: 0, opacity: 0, duration: 0.8, ease: 'back.out(1.7)' });
+    }
+
+    // 2. Gold divider
+    const divider = heroPanel.querySelector('.ornamental-divider');
+    if (divider) {
+      tl.from(divider, { scaleX: 0, opacity: 0, duration: 0.6 }, '-=0.3');
+    }
+
+    // 3. Mughal arch — draw in stroke
+    const archPaths = heroPanel.querySelectorAll('.arch-frame path');
+    if (archPaths.length > 0) {
+      archPaths.forEach(path => {
+        const length = path.getTotalLength ? path.getTotalLength() : 1200;
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+      });
+      tl.to(archPaths, {
+        strokeDashoffset: 0,
+        duration: 1.2,
+        ease: 'power1.inOut',
+        stagger: 0.2
+      }, '-=0.2');
+    }
+
+    // 4. Couple names — word by word reveal
+    const coupleNames = heroPanel.querySelector('.couple-names');
+    if (coupleNames) {
+      tl.from(coupleNames, { y: 60, opacity: 0, duration: 0.8 }, '-=0.4');
+    }
+
+    // 5. Floral elements
+    const florals = heroPanel.querySelectorAll('.hero-floral');
+    if (florals.length > 0) {
+      tl.from(florals, { scale: 0, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.5)' }, '-=0.3');
+    }
+
+    // 6. Date / venue / CTA
+    const venueInfo = heroPanel.querySelector('.venue-info');
+    const ctaButton = heroPanel.querySelector('.cta-button');
+    const regards = heroPanel.querySelector('.hero-regards');
+    const animateInEls = [venueInfo, ctaButton, regards].filter(Boolean);
+    if (animateInEls.length > 0) {
+      tl.from(animateInEls, { y: 30, opacity: 0, duration: 0.6, stagger: 0.1 }, '-=0.2');
+    }
+
+    // 7. Countdown
+    const countdown = heroPanel.querySelector('.countdown');
+    if (countdown) {
+      tl.from(countdown, { scale: 0.8, opacity: 0, duration: 0.6 }, '-=0.3');
+    }
+  }
+
+  function initFloralParallax() {
+    // Desktop only
+    const mm = gsap.matchMedia();
+    mm.add('(min-width: 768px)', () => {
+      gsap.utils.toArray('.hero-floral').forEach(floral => {
+        gsap.to(floral, {
+          y: -100,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      });
+    });
+  }
+
+  function initNavbarScroll() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    ScrollTrigger.create({
+      start: 80,
+      onUpdate: (self) => {
+        if (self.scroll() > 80) {
+          header.style.background = 'rgba(27, 94, 59, 0.98)';
+          header.style.borderBottomColor = 'rgba(212, 168, 67, 0.6)';
+          header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(212, 168, 67, 0.1)';
+        } else {
+          header.style.background = 'rgba(27, 94, 59, 0.9)';
+          header.style.borderBottomColor = 'rgba(212, 168, 67, 0.4)';
+          header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+        }
+      }
+    });
+  }
+
+  function initHoverEffects() {
+    // Gold glow on cards/buttons on hover
+    const hoverTargets = document.querySelectorAll('.event-card, .route-card, .tip-card');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        gsap.to(el, {
+          y: -3,
+          boxShadow: '0 12px 30px rgba(0,0,0,0.3), 0 0 20px rgba(212,168,67,0.15)',
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+      el.addEventListener('mouseleave', () => {
+        gsap.to(el, {
+          y: 0,
+          boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+    });
+  }
+
+  function initFloralSway() {
+    const florals = document.querySelectorAll('.hero-floral');
+    florals.forEach((floral, i) => {
+      gsap.to(floral, {
+        rotation: i % 2 === 0 ? 3 : -3,
+        duration: 3 + i,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1
+      });
+    });
+  }
+
+  // ================================
+  // IntersectionObserver Fallback
+  // ================================
+  function initScrollEffectsFallback() {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-      // Show all elements immediately without animation
       document.querySelectorAll('.reveal').forEach(el => {
         el.classList.add('revealed');
       });
       return;
     }
 
+    // Mark body as js-loaded for CSS hooks
+    document.body.classList.add('js-loaded');
+
     // Create Intersection Observer
     const observerOptions = {
-      root: null, // viewport
-      rootMargin: '0px 0px -50px 0px', // trigger slightly before element enters
-      threshold: 0.1 // 10% visible
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
-          // Stop observing once revealed
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    // Observe all reveal elements
     document.querySelectorAll('.reveal').forEach(el => {
       revealObserver.observe(el);
     });
 
     // Stagger reveal for grouped elements
-    initStaggeredReveals();
-  }
-
-  function initStaggeredReveals() {
     const staggerGroups = document.querySelectorAll('.reveal-stagger');
-
     staggerGroups.forEach(group => {
       const children = group.querySelectorAll('.reveal-item');
       children.forEach((child, index) => {
         child.style.transitionDelay = `${index * 0.1}s`;
       });
     });
-  }
-
-  // ================================
-  // Countdown Number Transitions
-  // ================================
-  function animateCountdownNumber(element, newValue) {
-    const currentValue = element.textContent;
-    if (currentValue === newValue) return;
-
-    // Add flip animation class
-    element.classList.add('flip');
-
-    // Update value after half animation
-    setTimeout(() => {
-      element.textContent = newValue;
-    }, 150);
-
-    // Remove animation class
-    setTimeout(() => {
-      element.classList.remove('flip');
-    }, 300);
   }
 
   // ================================
@@ -460,9 +688,16 @@
     initNavigation();
     initCountdown();
     initRSVPForm();
-    initScrollEffects();
+    initSmoothScroll();
 
-    console.log('Wedding website initialized');
+    // Use GSAP if available, otherwise fallback to IntersectionObserver
+    if (hasGSAP) {
+      initGSAPAnimations();
+    } else {
+      initScrollEffectsFallback();
+    }
+
+    console.log('Wedding website initialized' + (hasGSAP ? ' (GSAP)' : ' (fallback)'));
   }
 
   // Start app when DOM ready

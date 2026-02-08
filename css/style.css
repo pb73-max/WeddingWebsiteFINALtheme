@@ -1,6 +1,6 @@
 /**
  * Prerna & Arpit Wedding Website
- * Indian Maximalist / Kitsch-Folk Fusion Design
+ * Elegant Save-the-Date Inspired Design
  */
 
 /* ================================
@@ -8,12 +8,22 @@
    ================================ */
 :root {
   /* Primary Colors */
-  --emerald-green: #1A5E3A;
+  --emerald-green: #1B5E3B;
   --rich-gold: #D4A843;
-  --coral-red: #E05A4E;
-  --hot-pink: #E84B8A;
+  --coral-red: #E05A3A;
+  --hot-pink: #E24585;
   --blue-violet: #6B4FA0;
   --warm-orange: #D4793A;
+  --bright-gold: #E8C84A;
+  --royal-purple: #5B2D8E;
+  --blush-pink: #F2A7B3;
+  --grape-berry: #6B2D5B;
+  --deep-teal: #0D3D3B;
+  --rich-black-brown: #2A1810;
+  --dark-green-black: #0B2818;
+  --antique-white: #FDF5E6;
+  --pure-gold-text: #C9982E;
+  --warm-cream: #FFF8E7;
 
   /* Text Colors */
   --cream: #FFF8E7;
@@ -29,7 +39,6 @@
   --batik-blue: #8B7CC8;
   --leaf-green: #3D6B45;
   --grape-purple: #5E3A6B;
-  --light-pink: rgba(198, 140, 115, 0.5);
 
   /* Functional Colors */
   --bg-primary: var(--emerald-green);
@@ -37,6 +46,12 @@
   --text-light: var(--cream);
   --text-dark: var(--dark-green);
   --border-gold: var(--metallic-gold);
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #C9982E 0%, #E8C84A 40%, #D4A843 70%, #C9982E 100%);
+  --gradient-emerald: linear-gradient(180deg, #1B5E3B 0%, #0D3D3B 100%);
+  --gradient-bandhani: linear-gradient(180deg, #5B2D8E 0%, #E24585 50%, #F2A7B3 100%);
+  --gradient-sunset: linear-gradient(135deg, #E05A3A 0%, #E24585 100%);
 
   /* Event Theme Colors - Heritage */
   --heritage-bg: #A0522D;
@@ -63,10 +78,12 @@
   --royal-text: #FFF8E7;
 
   /* Typography */
-  --font-display: 'Boogaloo', cursive;
-  --font-headline: 'Boogaloo', cursive;
-  --font-script: 'Boogaloo', cursive;
-  --font-body: 'Boogaloo', cursive;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-headline: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Yatra One', cursive;
+  --font-body: 'Lora', Georgia, serif;
+  --font-nav: 'Josefin Sans', sans-serif;
+  --font-monogram: 'Yeseva One', serif;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -103,7 +120,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   /* Support for notched phones */
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
@@ -111,18 +127,12 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-light);
   background-color: var(--emerald-green);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Mughal floral tile pattern background */
-  background-image: url('../assets/images/background-pattern.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   /* Mobile tap highlight */
   -webkit-tap-highlight-color: rgba(212, 168, 67, 0.2);
 }
@@ -210,6 +220,8 @@ ul {
 @media (prefers-contrast: high) {
   :root {
     --cream: #FFFFFF;
+    --warm-cream: #FFFFFF;
+    --antique-white: #FFFFFF;
     --dark-green: #000000;
   }
 
@@ -229,11 +241,11 @@ ul {
    ================================ */
 .couple-names {
   font-family: var(--font-display);
-  font-size: clamp(6rem, 18vw, 10.5rem);
-  color: #8b5e4a;
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--antique-white);
   letter-spacing: 0.05em;
-  -webkit-text-stroke: 2px black;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
   margin: var(--spacing-md) 0;
 }
@@ -245,7 +257,7 @@ ul {
 }
 
 .date-venue {
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: var(--cream);
   letter-spacing: 0.15em;
@@ -255,12 +267,13 @@ ul {
 
 .section-title {
   font-family: var(--font-headline);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-style: italic;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-style: normal;
   font-weight: 700;
-  color: var(--cream);
+  color: var(--rich-gold);
   text-align: center;
   margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.03em;
 }
 
 .section-subtitle {
@@ -296,18 +309,14 @@ ul {
 .content-panel {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  background: var(--light-pink);
+  background: var(--emerald-green);
   padding: var(--spacing-xl) var(--spacing-lg);
   position: relative;
-  /* Layered gold border effect */
-  border: 4px solid var(--metallic-gold);
+  border: 3px solid var(--rich-gold);
+  outline: 2px solid #C07040;
+  outline-offset: 6px;
   box-shadow:
-    /* Inner glow */
     inset 0 0 30px rgba(201, 168, 76, 0.1),
-    /* Gold outer frame */
-    0 0 0 8px rgba(201, 168, 76, 0.2),
-    0 0 0 12px rgba(201, 168, 76, 0.1),
-    /* Soft shadow */
     0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -350,13 +359,10 @@ ul {
   left: 0;
   right: 0;
   z-index: 100;
-  background: linear-gradient(180deg,
-    rgba(26, 94, 58, 0.98) 0%,
-    rgba(26, 94, 58, 0.95) 100%
-  );
+  background: rgba(27, 94, 59, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--metallic-gold);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.4);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -388,7 +394,7 @@ ul {
 }
 
 .nav-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-monogram);
   font-size: 1.5rem;
   color: var(--rich-gold);
   letter-spacing: 0.1em;
@@ -416,9 +422,9 @@ ul {
 }
 
 .nav-link {
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--cream);
@@ -579,13 +585,7 @@ ul {
   min-height: 100vh;
   display: block;
   padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-xl);
-  /* Slight darkening overlay over batik pattern */
-  background: linear-gradient(
-    180deg,
-    rgba(26, 58, 42, 0.3) 0%,
-    rgba(26, 58, 42, 0.1) 50%,
-    rgba(26, 58, 42, 0.3) 100%
-  );
+  background: var(--gradient-emerald);
 }
 
 .hero .content-panel {
@@ -795,8 +795,8 @@ ul {
 
 .ampersand {
   font-family: var(--font-script);
-  color: black;
-  font-size: 0.8em;
+  color: var(--rich-gold);
+  font-size: 1.1em;
   margin: 0 0.1em;
 }
 
@@ -891,15 +891,17 @@ ul {
 .countdown-number {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  color: var(--light-gold);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--rich-gold);
   line-height: 1;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .countdown-label {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
+  font-weight: 300;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -1017,7 +1019,7 @@ ul {
   display: block;
   font-family: var(--font-script);
   font-size: 1.3rem;
-  color: var(--coral-red);
+  color: var(--rich-gold);
   margin-bottom: var(--spacing-xs);
 }
 
@@ -1059,10 +1061,11 @@ ul {
 
 .form-label {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--cream);
   margin-bottom: var(--spacing-sm);
 }
@@ -1091,11 +1094,11 @@ ul {
   width: 100%;
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--cream);
-  background: rgba(255, 248, 231, 0.08);
-  border: 2px solid rgba(201, 168, 76, 0.4);
+  color: var(--antique-white);
+  background: rgba(255, 248, 231, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.4);
   border-radius: 4px;
-  padding: var(--spacing-md);
+  padding: 14px 18px;
   transition: all var(--transition-speed) var(--transition-ease);
 }
 
@@ -1109,6 +1112,7 @@ ul {
 .form-textarea:focus {
   outline: none;
   border-color: var(--rich-gold);
+  border-width: 2px;
   background: rgba(255, 248, 231, 0.12);
   box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.2);
 }
@@ -1148,36 +1152,30 @@ ul {
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  background: linear-gradient(
-    135deg,
-    var(--rich-gold) 0%,
-    var(--light-gold) 50%,
-    var(--rich-gold) 100%
-  );
-  background-size: 200% 200%;
-  color: var(--dark-green);
-  padding: var(--spacing-md) var(--spacing-xxl);
-  border: 2px solid var(--metallic-gold);
+  background: var(--gradient-sunset);
+  color: white;
+  padding: 16px 48px;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: all var(--transition-speed) var(--transition-ease);
-  box-shadow:
-    0 4px 15px rgba(201, 168, 76, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(224, 90, 58, 0.3);
   min-width: 200px;
 }
 
 .submit-button:hover:not(:disabled) {
-  background-position: 100% 100%;
-  box-shadow:
-    0 6px 25px rgba(201, 168, 76, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  filter: brightness(1.1);
+  box-shadow: 0 6px 25px rgba(212, 168, 67, 0.4);
   transform: translateY(-2px);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
 .submit-button:disabled {
@@ -1512,11 +1510,7 @@ ul {
    ================================ */
 .events-timeline {
   padding: var(--spacing-lg) 0 var(--spacing-xxl);
-  background: linear-gradient(
-    180deg,
-    rgba(26, 58, 42, 0.2) 0%,
-    rgba(26, 58, 42, 0.3) 100%
-  );
+  background: transparent;
 }
 
 .timeline-container {
@@ -1545,7 +1539,7 @@ ul {
 .day-header {
   position: relative;
   padding: var(--spacing-lg);
-  background: var(--light-pink);
+  background: var(--emerald-green);
   border: 2px solid var(--metallic-gold);
   border-radius: 8px;
   margin-bottom: var(--spacing-lg);
@@ -1617,7 +1611,7 @@ ul {
 }
 
 .event-time {
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1632,6 +1626,7 @@ ul {
 .event-name {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
   margin-bottom: var(--spacing-xs);
 }
 
@@ -1663,6 +1658,7 @@ ul {
 }
 
 .dress-label {
+  font-family: var(--font-nav);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -1864,12 +1860,7 @@ ul {
    ================================ */
 .page-header {
   padding: calc(var(--nav-height) + var(--spacing-xl)) 0 var(--spacing-lg);
-  /* Darkening overlay */
-  background: linear-gradient(
-    180deg,
-    rgba(26, 58, 42, 0.4) 0%,
-    rgba(26, 58, 42, 0.2) 100%
-  );
+  background: var(--gradient-emerald);
 }
 
 .page-header .content-panel {
@@ -1953,14 +1944,15 @@ ul {
 }
 
 .route-city {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--dark-green);
   margin: 0;
 }
 
 .route-distance {
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--dark-green);
@@ -1998,7 +1990,7 @@ ul {
 
 .transport-mode {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -2273,14 +2265,9 @@ section {
   padding: var(--spacing-xl) var(--spacing-md);
 }
 
-/* Sections with content panels get slight overlay */
+/* Sections - clean emerald background */
 section:not(.hero):not(.page-header) {
-  background: linear-gradient(
-    180deg,
-    rgba(26, 58, 42, 0.15) 0%,
-    rgba(26, 58, 42, 0.25) 50%,
-    rgba(26, 58, 42, 0.15) 100%
-  );
+  background: transparent;
 }
 
 /* Section divider - decorative line between sections */
@@ -2304,7 +2291,7 @@ section:not(:last-of-type)::after {
    Footer
    ================================ */
 .site-footer {
-  background: linear-gradient(180deg, var(--dark-green) 0%, #0f261a 100%);
+  background: linear-gradient(180deg, var(--deep-teal) 0%, #0B2818 100%);
   border-top: 3px solid var(--metallic-gold);
   padding: var(--spacing-xxl) var(--spacing-md);
   /* Safe area for phones with home indicator */
@@ -2336,20 +2323,23 @@ section:not(:last-of-type)::after {
 }
 
 .footer-text {
-  font-family: var(--font-script);
+  font-family: var(--font-headline);
   font-size: 1.8rem;
-  color: var(--coral-red);
+  font-weight: 600;
+  color: var(--pure-gold-text);
+  opacity: 0.7;
   margin-bottom: var(--spacing-xs);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .footer-families {
-  font-family: var(--font-body);
+  font-family: var(--font-headline);
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--cream);
+  color: var(--pure-gold-text);
+  opacity: 0.7;
 }
 
 .footer-motif {
@@ -2449,6 +2439,10 @@ section:not(:last-of-type)::after {
   .corner-bottom-right { bottom: 12px; right: 12px; }
 
   /* Hero mobile adjustments */
+  .couple-names {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
   .hero .content-panel {
     width: auto;
     max-width: none;
@@ -2776,7 +2770,7 @@ section:not(:last-of-type)::after {
 
   /* Hero text adjustments */
   .couple-names {
-    font-size: 6rem;
+    font-size: clamp(2rem, 12vw, 3rem);
   }
 
   .script-tagline {
@@ -2821,7 +2815,7 @@ section:not(:last-of-type)::after {
   }
 
   .couple-names {
-    font-size: 5rem;
+    font-size: clamp(1.8rem, 14vw, 2.5rem);
   }
 
   .mughal-arch {
@@ -3094,10 +3088,10 @@ section:not(:last-of-type)::after {
   }
 }
 
-/* Reveal base state - hidden */
+/* Reveal base state - visible by default (GSAP or IntersectionObserver handles animation) */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s var(--transition-ease),
               transform 0.6s var(--transition-ease);
 }
@@ -3320,6 +3314,215 @@ section:not(:last-of-type)::after {
 
 .cta-button:active {
   transform: translateY(-1px);
+}
+
+/* ================================
+   Page Frame & Bandhani Borders
+   ================================ */
+.page-frame {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-frame-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.bandhani-border {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bandhani-border {
+    display: block;
+    width: 60px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background: var(--gradient-bandhani);
+    z-index: 10;
+  }
+
+  /* CSS paisley pattern overlay */
+  .bandhani-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 4px at 15px 20px, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(circle 4px at 45px 40px, rgba(255,255,255,0.1) 0%, transparent 100%),
+      radial-gradient(circle 4px at 30px 60px, rgba(255,255,255,0.12) 0%, transparent 100%),
+      radial-gradient(circle 3px at 15px 80px, rgba(255,255,255,0.08) 0%, transparent 100%),
+      radial-gradient(circle 3px at 45px 100px, rgba(255,255,255,0.1) 0%, transparent 100%);
+    background-size: 60px 120px;
+  }
+
+  .bandhani-left {
+    border-right: 1px solid rgba(212, 168, 67, 0.3);
+  }
+
+  .bandhani-right {
+    border-left: 1px solid rgba(212, 168, 67, 0.3);
+  }
+}
+
+@media (min-width: 1440px) {
+  .bandhani-border {
+    width: 80px;
+  }
+
+  .bandhani-border::before {
+    background-size: 80px 120px;
+  }
+}
+
+/* ================================
+   Ornamental Dividers
+   ================================ */
+.ornamental-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  max-width: 300px;
+}
+
+.ornamental-divider::before,
+.ornamental-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4A843, transparent);
+}
+
+.center-motif {
+  color: var(--rich-gold);
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ================================
+   Mughal Arch Container
+   ================================ */
+.mughal-arch-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-lg) auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+.arch-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.arch-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  width: 100%;
+}
+
+/* ================================
+   Hero Floral Decorations
+   ================================ */
+.hero-floral {
+  position: absolute;
+  width: 100px;
+  top: 60px;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.hero-floral img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.hero-floral.floral-left {
+  left: 10px;
+}
+
+.hero-floral.floral-right {
+  right: 10px;
+}
+
+@media (max-width: 767px) {
+  .hero-floral {
+    width: 60px;
+    top: 40px;
+    opacity: 0.6;
+  }
+
+  .mughal-arch-container {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-floral {
+    display: none;
+  }
+
+  .mughal-arch-container {
+    max-width: 260px;
+  }
+}
+
+/* ================================
+   Ganesha Icon (hero)
+   ================================ */
+.ganesha-icon {
+  display: block;
+  margin: 0 auto var(--spacing-lg);
+  will-change: transform, opacity;
+}
+
+/* ================================
+   Section Cream Variant
+   ================================ */
+.section-cream {
+  background: var(--warm-cream);
+  color: var(--rich-black-brown);
+}
+
+.section-cream .section-title {
+  color: var(--coral-red);
+}
+
+/* ================================
+   Will-change Performance Hints
+   ================================ */
+.reveal,
+.hero-floral,
+.arch-frame {
+  will-change: transform, opacity;
+}
+
+/* ================================
+   GSAP Fallback: js-loaded class
+   ================================ */
+.js-loaded .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.js-loaded .reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ================================
