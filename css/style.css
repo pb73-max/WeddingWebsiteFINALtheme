@@ -63,10 +63,10 @@
   --royal-text: #FFF8E7;
 
   /* Typography */
-  --font-display: 'Yeseva One', serif;
-  --font-headline: 'Playfair Display', serif;
-  --font-script: 'Great Vibes', cursive;
-  --font-body: 'Cormorant Garamond', serif;
+  --font-display: 'Boogaloo', cursive;
+  --font-headline: 'Boogaloo', cursive;
+  --font-script: 'Boogaloo', cursive;
+  --font-body: 'Boogaloo', cursive;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
