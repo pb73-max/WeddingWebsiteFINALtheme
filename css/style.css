@@ -119,9 +119,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Mughal floral tile pattern background */
   background-image: url('../assets/images/background-pattern.jpg');
-  background-size: auto;
-  background-position: 0 0;
-  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   /* Mobile tap highlight */
   -webkit-tap-highlight-color: rgba(212, 168, 67, 0.2);
 }
