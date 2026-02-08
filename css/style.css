@@ -229,8 +229,8 @@ ul {
    ================================ */
 .couple-names {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  color: var(--cream);
+  font-size: clamp(6rem, 18vw, 10.5rem);
+  color: #8b5e4a;
   letter-spacing: 0.05em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
@@ -2775,7 +2775,7 @@ section:not(:last-of-type)::after {
 
   /* Hero text adjustments */
   .couple-names {
-    font-size: 2rem;
+    font-size: 6rem;
   }
 
   .script-tagline {
@@ -2820,7 +2820,7 @@ section:not(:last-of-type)::after {
   }
 
   .couple-names {
-    font-size: 1.75rem;
+    font-size: 5rem;
   }
 
   .mughal-arch {
